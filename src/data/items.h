@@ -2037,6 +2037,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_RareCandy,
     },
 
+    [ITEM_INFINITE_CANDY] =
+    {
+        .name = ITEM_NAME("Infinite Candy"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Infinitely raises\n"
+            "the level of a\n"
+            "Pokémon until cap."),
+        .pocket = POCKET_KEY_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
+        .iconPic = gItemIcon_RareCandy,
+        .iconPalette = gItemIconPalette_RareCandy,
+    },
+
     [ITEM_EXP_CANDY_XS] =
     {
         .name = ITEM_NAME("Exp. Candy XS"),
@@ -2308,6 +2325,22 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
         .flingPower = 30,
+        .iconPic = gItemIcon_Repel,
+        .iconPalette = gItemIconPalette_MaxRepel,
+    },
+
+    [ITEM_INFINITE_REPEL] =
+    {
+        .name = ITEM_NAME("Infinite Repel"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Toggles wild\n"
+            "encounters on\n"
+            "and off."),
+        .pocket = POCKET_KEY_ITEMS,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
     },
