@@ -45,8 +45,8 @@
 
 // CUSTOM UNUSED FLAGS
 
-#define FLAG_INFINITE_REPEL_ACTIVE    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
+#define FLAG_INFINITE_REPEL_ACTIVE      0x20    // Inf repel active or inactive
+#define FLAG_PETALBURG_GRUNT            0x21    // Petalburg woods grunt battled
 #define FLAG_UNUSED_0x022    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
