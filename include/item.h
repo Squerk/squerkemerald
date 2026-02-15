@@ -269,4 +269,7 @@ bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile volatile);
 u32 GetItemSellPrice(u32 itemId);
 bool32 IsHoldEffectChoice(enum HoldEffect holdEffect);
 
+u16 BagGetItemIdByPocketPosition(u8 pocketId, u16 pocketPos);
+u16 BagGetQuantityByPocketPosition(u8 pocketId, u16 pocketPos);
+
 #endif // GUARD_ITEM_H
