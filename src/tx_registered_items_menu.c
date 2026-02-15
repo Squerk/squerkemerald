@@ -253,14 +253,29 @@ static void TxRegItemsMenu_DoItemAction(u8 taskId)
 {
     s16 *data;
     u16 pos;
+    u16 itemId;
 
     data = gTasks[taskId].data;
     pos = (TxRegItemsMenuItemPageInfo.cursorPos + TxRegItemsMenuItemPageInfo.itemsAbove);
-    TxRegItemsMenu_RemoveScrollIndicator();
-
-    gSaveBlock1Ptr->registeredItemLastSelected = pos;
-    TxRegItemsMenu_CloseMenu(taskId);
-    UseRegisteredKeyItemOnField(pos+2);
+    itemId = gSaveBlock1Ptr->registeredItems[pos].itemId;
+    
+    // Check if this item uses party menu
+    if (GetItemType(itemId) == ITEM_USE_PARTY_MENU)
+    {
+        // Close registered items menu FIRST
+        gSaveBlock1Ptr->registeredItemLastSelected = pos;
+        TxRegItemsMenu_CloseMenu(taskId);
+        // Then use item (which will open party menu)
+        UseRegisteredKeyItemOnField(pos+2);
+    }
+    else
+    {
+        // Normal field items
+        TxRegItemsMenu_RemoveScrollIndicator();
+        gSaveBlock1Ptr->registeredItemLastSelected = pos;
+        TxRegItemsMenu_CloseMenu(taskId);
+        UseRegisteredKeyItemOnField(pos+2);
+    }
 }
 
 static void TxRegItemsMenu_CloseMenu(u8 taskId)
