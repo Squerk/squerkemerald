@@ -5947,11 +5947,33 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Poochyena
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Patrat
+Level: 7
+Hardy Nature
+Ability: Keen Eye
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
+- Leer
+- Bite
+
+Hoothoot
+Level: 7
+Hardy Nature
+Ability: Insomnia
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Confusion
+- Peck
+- Hypnosis
+
+Purrloin
+Level: 7
+Hardy Nature
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Assist
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -6213,15 +6235,52 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Zigzagoon
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pikipek @ Oran Berry
+Level: 7
+Bashful Nature
+Ability: Keen Eye
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Peck
+- Echoed Voice
+- Growl
 
-Taillow
-Level: 3
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wattrel @ Oran Berry
+Level: 7
+Bashful Nature
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Peck
+- Thunder Shock
+- Quick Attack
+
+Fletchling @ Lum Berry
+Level: 7
+Bashful Nature
+Ability: Big Pecks
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Peck
+- Ember
+- Quick Attack
+
+Wingull @ Lum Berry
+Level: 7
+Bashful Nature
+Ability: Keen Eye
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Air Cutter
+- Growl
+
+Pidove @ Oran Berry
+Level: 7
+Bashful Nature
+Ability: Big Pecks
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Peck
+- Quick Attack
+- Growl
 
 === TRAINER_TIMMY ===
 Name: TIMMY
@@ -9673,11 +9732,13 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Omniscient / Check Bad Move
 
-Treecko
+Chikorita
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Docile Nature
+Ability: Overgrow
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY
@@ -9730,9 +9791,11 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Torchic
+Tepig
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Docile Nature
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: MAY
@@ -9785,9 +9848,11 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Mudkip
+Totodile
 Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Docile Nature
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
 Name: MAY
@@ -11051,15 +11116,34 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Zigzagoon
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skiploom @ Miracle Seed
+Level: 8
+Quirky Nature
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Sleep Powder
+- Leech Seed
 
-Shroomish
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Numel @ Charcoal
+Level: 8
+Quirky Nature
+Ability: Oblivious
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Incinerate
+- Mud Shot
+- Yawn
+
+Palpitoad @ Mystic Water
+Level: 8
+Quirky Nature
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Mud Shot
+- Supersonic
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -11255,15 +11339,34 @@ Pic: Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Wurmple
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Venipede @ Oran Berry
+Level: 7
+Docile Nature
+Ability: Poison Point
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Poison Tail
+- Rollout
 
-Wurmple
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Surskit @ Oran Berry
+Level: 7
+Docile Nature
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Struggle Bug
+- Rain Dance
+
+Spewpa @ Oran Berry
+Level: 8
+Docile Nature
+Ability: Shed Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Infestation
+- Stun Spore
+- Protect
 
 === TRAINER_LYLE ===
 Name: LYLE
