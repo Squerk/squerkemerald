@@ -685,7 +685,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "Prof. Birch is studying the habitats\n"
-	.string "and distribution of POKéMON.\p"
+	.string "and distribution of Pokémon.\p"
 	.string "The Prof enjoys {RIVAL}'s help, too.\n"
 	.string "There's a lot of love there.$"
 

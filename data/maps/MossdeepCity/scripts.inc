@@ -342,11 +342,11 @@ MossdeepCity_Text_SpaceCenterLaunchingRockets:
 
 MossdeepCity_Text_MossdeepTargetedByMagma:
 	.string "I heard from a SAILOR buddy that\n"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
+	.string "Team Aqua set up shop in LILYCOVE.\p"
 	.string "I also heard that someone came along\n"
 	.string "and wiped the floor with them!\p"
 	.string "But MOSSDEEP here's been targeted\n"
-	.string "by that TEAM MAGMA.\p"
+	.string "by that Team Magma.\p"
 	.string "If you want to know what they're up to,\n"
 	.string "go visit the SPACE CENTER.$"
 
@@ -372,7 +372,7 @@ MossdeepCity_Text_LifeNeedsSeaToLive:
 
 MossdeepCity_Text_SurfExhilarating:
 	.string "A voyage on a ship is fine.\p"
-	.string "But crossing the sea with POKéMON\n"
+	.string "But crossing the sea with Pokémon\n"
 	.string "using SURF…\p"
 	.string "Now that's an exhilarating trip!\n"
 	.string "Wouldn't you agree, youngster?$"
@@ -391,13 +391,13 @@ MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.$"
 
 MossdeepCity_Text_GymSign:
-	.string "MOSSDEEP CITY POKéMON GYM\n"
-	.string "LEADERS: LIZA & TATE\p"
+	.string "MOSSDEEP City Pokémon Gym\n"
+	.string "Leaders: LIZA & TATE\p"
 	.string "“The mystic combination!”$"
 
 MossdeepCity_Text_CitySign:
-	.string "MOSSDEEP CITY\n"
-	.string "“Our slogan: Cherish POKéMON!”$"
+	.string "MOSSDEEP City\n"
+	.string "“Our slogan: Cherish Pokémon!”$"
 
 MossdeepCity_Text_SpaceCenterSign:
 	.string "MOSSDEEP SPACE CENTER\n"
@@ -406,7 +406,7 @@ MossdeepCity_Text_SpaceCenterSign:
 MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
+	.string "I'd heard MOSSDEEP's Gym LEADER is\n"
 	.string "pretty strong, so I decided to come\l"
 	.string "take a look-see for myself.\p"
 	.string "But there's something wrong about\n"
@@ -421,7 +421,7 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
 	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
+	.string "I think the Gym there had a new\n"
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"

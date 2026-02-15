@@ -348,7 +348,7 @@ MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
 	.string "rockets.$"
 
 MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
-	.string "Why would TEAM MAGMA want to steal\n"
+	.string "Why would Team Magma want to steal\n"
 	.string "our rocket fuel in the first place?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
@@ -358,7 +358,7 @@ MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 	.string "I can and will try!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
-	.string "If TEAM MAGMA takes the rocket fuel,\n"
+	.string "If Team Magma takes the rocket fuel,\n"
 	.string "I won't be able to go to space!\p"
 	.string "They can't be allowed to get away\n"
 	.string "with such an outrage!$"
@@ -368,7 +368,7 @@ MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 	.string "space one day…$"
 
 MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
-	.string "TEAM MAGMA…\n"
+	.string "Team Magma…\n"
 	.string "Do they want to go to space, too?$"
 
 MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
@@ -428,7 +428,7 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
 	.string "Don't you dare interfere!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
-	.string "STEVEN: TEAM MAGMA…\p"
+	.string "STEVEN: Team Magma…\p"
 	.string "What's the point of stealing rocket\n"
 	.string "fuel?$"
 
@@ -470,9 +470,9 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "If…\n"
-	.string "If we, TEAM MAGMA, are wrong…\l"
+	.string "If we, Team Magma, are wrong…\l"
 	.string "… … … … … …\p"
-	.string "Then might TEAM AQUA's goal to expand\n"
+	.string "Then might Team Aqua's goal to expand\n"
 	.string "the sea also be equally misguided?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
@@ -488,5 +488,5 @@ MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
 	.string "thanks for your support.\p"
 	.string "Please come see me at home\n"
 	.string "after this.\p"
-	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
+	.string "Oh, yes, I don't live in RUSTBORO City.\n"
 	.string "I live right here on this island.$"

@@ -288,7 +288,7 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "Isn't it nice in here, too?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "The mover's POKéMON do all the work\n"
+	.string "The mover's Pokémon do all the work\n"
 	.string "of moving us in and cleaning up after.\l"
 	.string "This is so convenient!\p"
 	.string "{PLAYER}, your room is upstairs.\n"
