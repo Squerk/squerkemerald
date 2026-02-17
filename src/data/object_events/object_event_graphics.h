@@ -109,6 +109,7 @@ const u32 gObjectEventPic_BlackBelt[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Beauty[] = INCBIN_U32("graphics/object_events/pics/people/beauty.4bpp");
 const u32 gObjectEventPic_Scientist1[] = INCBIN_U32("graphics/object_events/pics/people/scientist_1.4bpp");
 const u32 gObjectEventPic_Lass[] = INCBIN_U32("graphics/object_events/pics/people/lass.4bpp");
+const u32 gObjectEventPic_Bel[] = INCBIN_U32("graphics/object_events/pics/people/bel.4bpp");
 const u32 gObjectEventPic_Gentleman[] = INCBIN_U32("graphics/object_events/pics/people/gentleman.4bpp");
 const u32 gObjectEventPic_Sailor[] = INCBIN_U32("graphics/object_events/pics/people/sailor.4bpp");
 const u32 gObjectEventPic_Fisherman[] = INCBIN_U32("graphics/object_events/pics/people/fisherman.4bpp");
