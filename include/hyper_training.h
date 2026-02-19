@@ -3,5 +3,6 @@
 
 void DoHyperTraining(void);
 void ShowMaxIVMenu(void);
+void ShowNatureChangeMenu(void);
 
 #endif // GUARD_HYPER_TRAINING_H

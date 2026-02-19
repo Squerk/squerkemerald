@@ -569,3 +569,4 @@ gSpecials::
 	def_special ObjectEventInteractionPickApricornTree
 	def_special DoHyperTraining
 	def_special ShowMaxIVMenu
+	def_special ShowNatureChangeMenu

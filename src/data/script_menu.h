@@ -565,6 +565,8 @@ static const struct MenuAction MultichoiceList_HeartScaleServices[] =
 {
     {COMPOUND_STRING("Teach Move")},
     {COMPOUND_STRING("Max IV")},
+    {COMPOUND_STRING("Change Nature")},
+    {COMPOUND_STRING("Delete Move")},
     {gText_Cancel2},
 };
 
