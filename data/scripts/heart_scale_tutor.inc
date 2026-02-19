@@ -24,7 +24,7 @@ HeartScaleTutor_EventScript_MoveTutor::
 	msgbox MoveRelearner_Text_ChoosePkmn, MSGBOX_DEFAULT
 	special ChooseMonForMoveRelearner
 	waitstate
-	call_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MoveRelearner_EventScript_AnythingElse
+	call_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, HeartScaleTutor_EventScript_Decline
 	special IsSelectedMonEgg
 	call_if_eq VAR_RESULT, YES, MoveRelearner_EventScript_CantTeachMoveToEgg
 	call_if_eq VAR_0x8005, NO, MoveRelearner_EventScript_CantTeachMoveToPkmn
