@@ -971,7 +971,7 @@ SlateportCity_Text_HowTownIsBornAndGrows:
 SlateportCity_Text_SlateportWonderfulPlace:
 	.string "Shopping where you can breathe the\n"
 	.string "scent of the ocean…\p"
-	.string "SLATEPORT is such a wonderful place!$"
+	.string "Slateport is such a wonderful place!$"
 
 SlateportCity_Text_BuyBricksSoDecorWontGetDirty:
 	.string "If you put DOLLS or CUSHIONS on\n"
@@ -988,7 +988,7 @@ SlateportCity_Text_GoingToCompeteInBattleTent:
 
 SlateportCity_Text_BushedHikingFromMauville:
 	.string "Whew… I'm just bushed…\p"
-	.string "I hiked over from MAUVILLE City.\n"
+	.string "I hiked over from Mauville City.\n"
 	.string "But, boy, this city's huge.\p"
 	.string "If I'd known this, I would've ridden\n"
 	.string "my BIKE here.$"
@@ -1167,7 +1167,7 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "We made a huge discovery on our last\n"
 	.string "seafloor exploration.\p"
 	.string "We found an underwater cavern on\n"
-	.string "Route128.\p"
+	.string "Route 128.\p"
 	.string "We think it's the habitat of a Pokémon\n"
 	.string "that's said to have been long extinct.$"
 
@@ -1198,7 +1198,7 @@ SlateportCity_Text_PleaseComeWithMe:
 	.string "Please, come with me!$"
 
 SlateportCity_Text_BattleTentSign:
-	.string "BATTLE TENT SLATEPORT SITE\n"
+	.string "BATTLE TENT Slateport SITE\n"
 	.string "“Find it! The ultimate Pokémon!”$"
 
 SlateportCity_Text_SternsShipyardWantedSign:
@@ -1210,7 +1210,7 @@ SlateportCity_Text_SternsShipyardNearsCompletion:
 	.string "STERN'S SHIPYARD\p"
 	.string "“The ferry S.S. TIDAL nears\n"
 	.string "completion for serving the ports of\l"
-	.string "SLATEPORT and LILYCOVE.”$"
+	.string "Slateport and LILYCOVE.”$"
 
 SlateportCity_Text_SternsShipyardFerryComplete:
 	.string "STERN'S SHIPYARD\p"
@@ -1228,23 +1228,23 @@ SlateportCity_Text_OceanicMuseumSign:
 	.string "OCEANIC MUSEUM$"
 
 SlateportCity_Text_CitySign:
-	.string "SLATEPORT City\p"
+	.string "Slateport City\p"
 	.string "“The port where people and Pokémon\n"
 	.string "cross paths.”$"
 
 SlateportCity_Text_MarketSign:
-	.string "SLATEPORT MARKET\n"
+	.string "Slateport Market\n"
 	.string "“Unique items found nowhere else!”$"
 
 SlateportCity_Text_HarborFerryUnderConstruction:
-	.string "SLATEPORT HARBOR\p"
+	.string "Slateport Harbor\p"
 	.string "“The ferry S.S. TIDAL is under\n"
 	.string "construction in the SHIPYARD.\p"
 	.string "“Service is scheduled to begin\n"
 	.string "shortly.”$"
 
 SlateportCity_Text_HarborSign:
-	.string "SLATEPORT HARBOR\p"
+	.string "Slateport Harbor\p"
 	.string "“Enjoy a delightful cruise on\n"
 	.string "the ferry S.S. TIDAL.”$"
 

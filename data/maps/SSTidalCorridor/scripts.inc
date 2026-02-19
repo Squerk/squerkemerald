@@ -281,7 +281,7 @@ SSTidal_Text_HopeYouEnjoyVoyage:
 	.string "our ferry.$"
 
 SSTidal_Text_MadeLandInSlateport:
-	.string "We have made land in SLATEPORT City.\n"
+	.string "We have made land in Slateport City.\n"
 	.string "Thank you for sailing with us.$"
 
 SSTidal_Text_MadeLandInLilycove:

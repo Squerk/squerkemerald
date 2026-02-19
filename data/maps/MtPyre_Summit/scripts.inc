@@ -484,7 +484,7 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
 	.string "ARCHIE: Team Magma's MAXIE got ahead\n"
 	.string "of us, but we also got what we wanted.\p"
-	.string "The RED ORB preserved at MT. PYRE…\n"
+	.string "The RED ORB preserved at Mt. Pyre…\n"
 	.string "I, ARCHIE, now have it in my possession!\p"
 	.string "Fufufu… Now we can bring our ultimate\n"
 	.string "objective to fruition!\p"
@@ -549,7 +549,7 @@ MtPyre_Summit_Text_SuperAncientPokemonTaughtUs:
 	.string "taught us that…$"
 
 MtPyre_Summit_Text_WillYouHearOutMyTale:
-	.string "MT. PYRE is where we calm the spirits\n"
+	.string "Mt. Pyre is where we calm the spirits\n"
 	.string "of Pokémon that have passed on…\p"
 	.string "This is a high place where one can\n"
 	.string "see all of HOENN…\p"

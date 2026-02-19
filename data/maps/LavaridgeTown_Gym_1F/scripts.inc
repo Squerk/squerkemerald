@@ -183,7 +183,7 @@ LavaridgeTown_Gym_1F_EventScript_GymStatue::
 LavaridgeTown_Gym_1F_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "LAVARIDGE's Gym LEADER FLANNERY\n"
+	.string "LAVARIDGE's Gym Leader FLANNERY\n"
 	.string "uses FIRE-type Pokémon.\p"
 	.string "Her passion for Pokémon burns stronger\n"
 	.string "and hotter than a volcano.\p"
@@ -232,7 +232,7 @@ LavaridgeTown_Gym_B1F_Text_KeeganDefeat:
 
 LavaridgeTown_Gym_B1F_Text_KeeganPostBattle:
 	.string "Your skill is real…\n"
-	.string "But our LEADER FLANNERY is strong.\p"
+	.string "But our Leader FLANNERY is strong.\p"
 	.string "If you don't watch yourself, you'll be\n"
 	.string "burned seriously.$"
 
@@ -305,10 +305,10 @@ LavaridgeTown_Gym_1F_Text_FlanneryIntro:
 	.string "I have been entrusted with the…\n"
 	.string "No, wait.\p"
 	.string "I am FLANNERY, and I'm the Gym\n"
-	.string "LEADER here!\p"
+	.string "Leader here!\p"
 	.string "Uh…\n"
 	.string "Dare not underestimate me, though\l"
-	.string "I have been LEADER only a short time!\p"
+	.string "I have been Leader only a short time!\p"
 	.string "With skills inherited from my grand-\n"
 	.string "father, I shall, uh…demonstrate the\l"
 	.string "hot moves we have honed on this land!$"
@@ -317,7 +317,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
 	.string "Oh…\n"
 	.string "I guess I was trying too hard…\p"
 	.string "I… I've only recently become\n"
-	.string "a Gym LEADER.\p"
+	.string "a Gym Leader.\p"
 	.string "I tried too hard to be someone\n"
 	.string "I'm not.\p"
 	.string "I have to do things my natural way. If\n"
@@ -348,19 +348,19 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat:
 	.string "be suitable for longer battles.$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
-	.string "Registered Gym LEADER FLANNERY\n"
+	.string "Registered Gym Leader FLANNERY\n"
 	.string "in the POKéNAV.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "Your power reminds me of someone…\p"
 	.string "Oh! I know! You battle like NORMAN,\n"
-	.string "the Gym LEADER of Petalburg.$"
+	.string "the Gym Leader of Petalburg.$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
-	.string "LAVARIDGE Town Pokémon Gym$"
+	.string "Lavaridge Town Pokémon Gym$"
 
 LavaridgeTown_Gym_1F_Text_GymStatueCertified:
-	.string "LAVARIDGE Town Pokémon Gym\p"
+	.string "Lavaridge Town Pokémon Gym\p"
 	.string "FLANNERY'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

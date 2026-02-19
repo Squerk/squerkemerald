@@ -63,7 +63,7 @@ CaveOfOrigin_B1F_Text_WallaceStory:
 	.string "Ah, so you are {PLAYER}{KUN}?\n"
 	.string "I've heard tales of your exploits.\p"
 	.string "My name is WALLACE.\p"
-	.string "I was once the Gym LEADER of\n"
+	.string "I was once the Gym Leader of\n"
 	.string "SOOTOPOLIS, but something came up.\p"
 	.string "So now, I've entrusted my mentor JUAN\n"
 	.string "with the Gym's operation.\p"
@@ -96,7 +96,7 @@ CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin:
 	.string "where RAYQUAZA might be right now.$"
 
 CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat:
-	.string "WALLACE: MT. PYRE?\p"
+	.string "WALLACE: Mt. Pyre?\p"
 	.string "But when I met the old lady there\n"
 	.string "earlier, she made no mention of it.\p"
 	.string "I very much doubt that the old lady\n"

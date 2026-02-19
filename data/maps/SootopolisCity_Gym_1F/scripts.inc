@@ -178,7 +178,7 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "SOOTOPOLIS's Gym LEADER JUAN is\n"
+	.string "SOOTOPOLIS's Gym Leader JUAN is\n"
 	.string "a master of WATER-type Pokémon.\p"
 	.string "And, to get to JUAN, an icy floor\n"
 	.string "will hamper your progress…\p"
@@ -201,7 +201,7 @@ SootopolisCity_Gym_1F_Text_JuanIntro:
 	.string "It was I who taught WALLACE everything\n"
 	.string "there is to know about Pokémon.\p"
 	.string "Once, I had given up my position as\n"
-	.string "the Gym LEADER.\p"
+	.string "the Gym Leader.\p"
 	.string "In my place, I had entrusted WALLACE\n"
 	.string "with the Gym.\p"
 	.string "However, a compelling reason arose for\n"
@@ -254,7 +254,7 @@ SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "… … … … … …$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan:
-	.string "Registered Gym LEADER JUAN\n"
+	.string "Registered Gym Leader JUAN\n"
 	.string "in the POKéNAV.$"
 
 SootopolisCity_Gym_1F_Text_JuanPostBattle:

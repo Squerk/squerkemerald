@@ -103,10 +103,10 @@ VerdanturfTown_Text_EasyToGetToRustboroNow:
 	.string "That cave next to the Pokémon MART\n"
 	.string "is now a tunnel to the other side.\p"
 	.string "It's great--it's easy to go shop for\n"
-	.string "new DEVON products in RUSTBORO now.$"
+	.string "new Devon products in Rustboro now.$"
 
 VerdanturfTown_Text_TownSign:
-	.string "VERDANTURF Town\p"
+	.string "Verdanturf Town\p"
 	.string "“The windswept highlands with the\n"
 	.string "sweet fragrance of grass.”$"
 
@@ -114,12 +114,12 @@ VerdanturfTown_Text_WandasHouse:
 	.string "WANDA'S HOUSE$"
 
 VerdanturfTown_Text_BattleTentSign:
-	.string "BATTLE TENT VERDANTURF SITE\n"
+	.string "BATTLE TENT Verdanturf SITE\n"
 	.string "“Feast Your Eyes on Battles!”$"
 
 VerdanturfTown_Text_RusturfTunnelSign:
 	.string "RUSTURF TUNNEL\n"
-	.string "“Linking RUSTBORO and VERDANTURF\p"
+	.string "“Linking Rustboro and VERDANTURF\p"
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"
 

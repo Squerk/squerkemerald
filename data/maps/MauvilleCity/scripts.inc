@@ -574,12 +574,12 @@ MauvilleCity_Text_ScottYouDidntHoldBack:
 	.string "I'll be cheering for you!$"
 
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
-	.string "WATTSON: Oh, {PLAYER}{KUN}!\n"
+	.string "Wattson: Oh, {PLAYER}{KUN}!\n"
 	.string "You look like you have a lot of zip!\l"
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
 	.string "I need a favor, {PLAYER}{KUN}!\p"
-	.string "MAUVILLE City has an underground\n"
+	.string "Mauville City has an underground\n"
 	.string "sector called NEW MAUVILLE.\p"
 	.string "{PLAYER}{KUN}, I'd like you to go there and\n"
 	.string "switch off the GENERATOR.\p"
@@ -589,15 +589,15 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "NEW MAUVILLE.$"
 
 MauvilleCity_Text_WattsonWontBeChallenge:
-	.string "WATTSON: Don't you worry about it.\n"
+	.string "Wattson: Don't you worry about it.\n"
 	.string "It won't be a challenge to you.\p"
-	.string "The entrance to NEW MAUVILLE is just\n"
-	.string "a short SURF away from Route110.\p"
+	.string "The entrance to NEW Mauville is just\n"
+	.string "a short SURF away from Route 110.\p"
 	.string "That's it, then, you have my trust!\n"
 	.string "Wahahahaha!$"
 
 MauvilleCity_Text_WattsonThanksTakeTM:
-	.string "WATTSON: Wahahahaha!\p"
+	.string "Wattson: Wahahahaha!\p"
 	.string "I knew it, {PLAYER}{KUN}! I knew I'd made\n"
 	.string "the right choice asking you!\p"
 	.string "This is my thanks--a TM containing\n"
@@ -605,7 +605,7 @@ MauvilleCity_Text_WattsonThanksTakeTM:
 	.string "Go on, you've earned it!$"
 
 MauvilleCity_Text_WattsonYoungTakeCharge:
-	.string "WATTSON: Wahahahaha!\p"
+	.string "Wattson: Wahahahaha!\p"
 	.string "It pleases me to no end to see\n"
 	.string "the young step up and take charge!$"
 
@@ -631,12 +631,12 @@ MauvilleCity_Text_PokemonCanJumpYouOnBike:
 	.string "wild Pokémon could jump you.$"
 
 MauvilleCity_Text_CitySign:
-	.string "MAUVILLE City\n"
+	.string "Mauville City\n"
 	.string "“The bright and shiny city of fun!”$"
 
 MauvilleCity_Text_GymSign:
-	.string "MAUVILLE City Pokémon Gym\n"
-	.string "LEADER: WATTSON\l"
+	.string "Mauville City Pokémon Gym\n"
+	.string "LEADER: Wattson\l"
 	.string "“The cheerfully electrifying man!”$"
 
 MauvilleCity_Text_BikeShopSign:
@@ -646,7 +646,7 @@ MauvilleCity_Text_BikeShopSign:
 
 MauvilleCity_Text_GameCornerSign:
 	.string "“The play spot for all!”\n"
-	.string "MAUVILLE GAME CORNER$"
+	.string "Mauville Game Corner $"
 
 MauvilleCity_Text_ExplainTV:
 	.string "Hi, do you check out TV at all?\p"

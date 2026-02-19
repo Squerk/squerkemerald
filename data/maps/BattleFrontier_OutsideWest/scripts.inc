@@ -331,7 +331,7 @@ BattleFrontier_OutsideWest_Text_WhereWouldYouLikeToGo:
 	.string "And where would you like to go?$"
 
 BattleFrontier_OutsideWest_Text_SlateportItIs:
-	.string "SLATEPORT City it is, then!$"
+	.string "Slateport City it is, then!$"
 
 BattleFrontier_OutsideWest_Text_LilycoveItIs:
 	.string "LILYCOVE City it is, then!$"
@@ -489,7 +489,7 @@ BattleFrontier_OutsideWest_Text_DomeAceIsMine:
 	.string "Oh, shush!\n"
 	.string "Keep that racket down!\p"
 	.string "You fair-weather fans should stick\n"
-	.string "to cheering for some Gym LEADER!\p"
+	.string "to cheering for some Gym Leader!\p"
 	.string "The DOME ACE is mine!\n"
 	.string "The only idol for me!$"
 

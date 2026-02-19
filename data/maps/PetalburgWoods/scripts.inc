@@ -332,7 +332,7 @@ PetalburgWoods_Text_IWasGoingToAmbushYou:
 	.string "I got sick of waiting, so here I am!$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "You! DEVON RESEARCHER!\p"
+	.string "You! Devon researcher!\p"
 	.string "Hand over those papers!$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
@@ -442,7 +442,7 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the Badge from RUSTBORO Gym!\p"
+	.string "That's the Badge from Rustboro Gym!\p"
 	.string "You must be a TRAINER.\n"
 	.string "You should try using this item.$"
 

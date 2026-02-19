@@ -700,7 +700,7 @@ PetalburgCity_EventScript_GymBoy::
 
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF Town\n"
+	.string "We have to leave for Verdanturf Town\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:

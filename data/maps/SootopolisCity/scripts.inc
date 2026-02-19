@@ -1390,7 +1390,7 @@ SootopolisCity_Movement_DestroyTask::
 SootopolisCity_Text_GymSign:
 	.string "SOOTOPOLIS City Pokémon Gym\n"
 	.string "LEADER: JUAN\p"
-	.string "“The Gym LEADER with the beauty\n"
+	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
 SootopolisCity_Text_CitySign:
@@ -1513,7 +1513,7 @@ SootopolisCity_Text_CaveOfOriginPleaseLeave:
 	.string "Who might you be?\p"
 	.string "This is the CAVE OF ORIGIN.\p"
 	.string "The spirits of Pokémon, becalmed at\n"
-	.string "MT. PYRE, are said to be revived here.\p"
+	.string "Mt. Pyre, are said to be revived here.\p"
 	.string "Please leave.$"
 
 SootopolisCity_Text_LeadSuperiorTrainerToCave:
@@ -1663,7 +1663,7 @@ SootopolisCity_Text_SoThatsRayquaza:
 SootopolisCity_Text_MaxieArchieLeft:
 	.string "STEVEN: It looks like both MAXIE and\n"
 	.string "ARCHIE have gone away somewhere.\p"
-	.string "Perhaps they've gone to MT. PYRE to\n"
+	.string "Perhaps they've gone to Mt. Pyre to\n"
 	.string "return those ORBS…$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar:
@@ -1699,7 +1699,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "And where does one get the RAIN Badge?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
-	.string "the SOOTOPOLIS Gym LEADER.\p"
+	.string "the SOOTOPOLIS Gym Leader.\p"
 	.string "When you're all set to go, step through\n"
 	.string "that door.$"
 

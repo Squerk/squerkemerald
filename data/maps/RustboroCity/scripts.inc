@@ -1015,7 +1015,7 @@ RustboroCity_EventScript_Boy1::
 	end
 
 RustboroCity_Text_WeShortenItToDevon:
-	.string "The DEVON CORPORATION…\n"
+	.string "The Devon Corporation…\n"
 	.string "We all just shorten it to DEVON.\p"
 	.string "That company makes all sorts of\n"
 	.string "convenient products.$"
@@ -1044,7 +1044,7 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "Pokémon TRAINER'S SCHOOL?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the Gym LEADER, but…\p"
+	.string "I challenged the Gym Leader, but…\p"
 	.string "It's not going to be easy winning with\n"
 	.string "my FIRE-type Pokémon…\p"
 	.string "FIRE-type Pokémon don't match up\n"
@@ -1060,7 +1060,7 @@ RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "The old sailor MR. BRINEY lives in\n"
 	.string "a cottage by the sea.\p"
 	.string "He said he was going shopping in\n"
-	.string "SLATEPORT for his pet, PEEKO.\p"
+	.string "Slateport for his pet, PEEKO.\p"
 	.string "That old sea dog, he must really love\n"
 	.string "that PEEKO.$"
 
@@ -1102,7 +1102,7 @@ RustboroCity_Text_HelpMeIWasRobbed:
 	.string "You're that fantastic TRAINER who\n"
 	.string "helped me in Petalburg WOODS!\p"
 	.string "Help me! I was robbed by Team Aqua!\n"
-	.string "I have to get the DEVON GOODS back!\p"
+	.string "I have to get the Devon goods back!\p"
 	.string "If I don't…\n"
 	.string "I'm going to be in serious trouble.$"
 
@@ -1112,7 +1112,7 @@ RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
 
 RustboroCity_Text_YouGotItThankYou:
 	.string "Oh! How did it go?\n"
-	.string "The DEVON GOODS?\p"
+	.string "The Devon goods?\p"
 	.string "You did!\n"
 	.string "You got them back!\p"
 	.string "You really are a great TRAINER!\p"
@@ -1228,22 +1228,22 @@ RustboroCity_Text_TunnelNearingCompletion:
 	.string "across it in red paint…$"
 
 RustboroCity_Text_DevonCorpSign:
-	.string "DEVON CORPORATION\p"
+	.string "Devon Corporation\p"
 	.string "“For all your living needs, we make\n"
 	.string "it all.”$"
 
 RustboroCity_Text_GymSign:
-	.string "RUSTBORO City Pokémon Gym\n"
-	.string "LEADER: ROXANNE\p"
+	.string "Rustboro City Pokémon Gym\n"
+	.string "LEADER: Roxanne\p"
 	.string "“The ROCK-loving honors student!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
-	.string "DEVON CORP. BRANCH OFFICE\p"
-	.string "“Access limited to DEVON employees\n"
+	.string "Devon CORP. BRANCH OFFICE\p"
+	.string "“Access limited to Devon employees\n"
 	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign:
-	.string "RUSTBORO City\p"
+	.string "Rustboro City\p"
 	.string "“The city probing the integration of\n"
 	.string "nature and science.”$"
 
