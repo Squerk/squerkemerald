@@ -315,7 +315,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     u16 species;
     u32 personality, pokerus;
     enum PokeBall ball;
-    u8 i, friendship, language, gameMet, markings, isModernFatefulEncounter;
+    u8 i, language, gameMet, markings, isModernFatefulEncounter;
     u16 moves[MAX_MON_MOVES];
     u32 ivs[NUM_STATS];
 
@@ -350,8 +350,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     SetMonData(temp, MON_DATA_MET_GAME, &gameMet);
     SetMonData(temp, MON_DATA_MARKINGS, &markings);
 
-    friendship = 120;
-    SetMonData(temp, MON_DATA_FRIENDSHIP, &friendship);
+    SetMonData(temp, MON_DATA_FRIENDSHIP, &(u8){MAX_FRIENDSHIP});
     SetMonData(temp, MON_DATA_POKERUS, &pokerus);
     SetMonData(temp, MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
     SetMonData(temp, MON_DATA_POKEBALL, &ball);

@@ -869,9 +869,9 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_LEAGUE_BATTLE]   = { 3,  2,  1},
     [FRIENDSHIP_EVENT_LEARN_TMHM]      = { 1,  1,  0},
     [FRIENDSHIP_EVENT_WALKING]         = { 1,  1,  1},
-    [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
-    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
-    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_FAINT_SMALL]     = {0, 0, 0},
+    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {0, 0, 0},
+    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {0, 0, 0},
 };
 
 static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
@@ -1121,7 +1121,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
-    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
+    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &(u8){MAX_FRIENDSHIP});
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
