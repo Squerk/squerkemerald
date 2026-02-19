@@ -3514,8 +3514,11 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         }
         break;
     case MOVE_EFFECT_THROAT_CHOP:
-        gDisableStructs[gEffectBattler].throatChopTimer = 2;
-        gBattlescriptCurrInstr = battleScript;
+        if (gDisableStructs[gEffectBattler].throatChopTimer == 0)
+        {
+            gDisableStructs[gEffectBattler].throatChopTimer = 2;
+            gBattlescriptCurrInstr = battleScript;
+        }
         break;
     case MOVE_EFFECT_INCINERATE:
         if (((gBattleMons[gEffectBattler].item >= FIRST_BERRY_INDEX && gBattleMons[gEffectBattler].item <= LAST_BERRY_INDEX)
@@ -4267,7 +4270,8 @@ static void Cmd_seteffectprimary(void)
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     u32 effectBattler = GetBattlerForBattleScript(cmd->effectBattler);
-    SetMoveEffect(battler, effectBattler, gBattleScripting.moveEffect, cmd->nextInstr, EFFECT_PRIMARY);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+    SetMoveEffect(battler, effectBattler, gBattleScripting.moveEffect, gBattlescriptCurrInstr, EFFECT_PRIMARY);
 }
 
 static void Cmd_seteffectsecondary(void)
@@ -4276,7 +4280,8 @@ static void Cmd_seteffectsecondary(void)
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     u32 effectBattler = GetBattlerForBattleScript(cmd->effectBattler);
-    SetMoveEffect(battler, effectBattler, gBattleScripting.moveEffect, cmd->nextInstr, EFFECT_PRIMARY);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+    SetMoveEffect(battler, effectBattler, gBattleScripting.moveEffect, gBattlescriptCurrInstr, NO_FLAGS);
 }
 
 static void Cmd_clearvolatile(void)
@@ -5643,7 +5648,7 @@ static inline bool32 CanEjectButtonTrigger(u32 battlerAtk, u32 battlerDef, enum 
      && battlerAtk != battlerDef
      && IsBattlerTurnDamaged(battlerDef)
      && IsBattlerAlive(battlerDef)
-     && CountUsablePartyMons(battlerDef) > 0
+     && CanBattlerSwitch(battlerDef)
      && !(moveEffect == EFFECT_HIT_SWITCH_TARGET && CanBattlerSwitch(battlerAtk)))
         return TRUE;
 
@@ -5655,7 +5660,7 @@ static inline bool32 CanEjectPackTrigger(u32 battlerAtk, u32 battlerDef, enum Ba
     if (gDisableStructs[battlerDef].tryEjectPack
      && GetBattlerHoldEffect(battlerDef) == HOLD_EFFECT_EJECT_PACK
      && IsBattlerAlive(battlerDef)
-     && CountUsablePartyMons(battlerDef) > 0
+     && CanBattlerSwitch(battlerDef)
      && !gProtectStructs[battlerDef].disableEjectPack
      && !(moveEffect == EFFECT_HIT_SWITCH_TARGET && CanBattlerSwitch(battlerAtk))
      && !(moveEffect == EFFECT_PARTING_SHOT && CanBattlerSwitch(battlerAtk)))
