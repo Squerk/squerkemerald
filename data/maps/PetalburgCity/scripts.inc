@@ -292,7 +292,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 PetalburgCity_EventScript_BoyApproachPlayer0::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer0
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
@@ -350,7 +350,8 @@ PetalburgCity_Movement_BoyApproachPlayer0:
 	walk_right
 	walk_right
 	walk_right
-	walk_in_place_faster_up
+	walk_down
+	walk_down
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer1:
@@ -403,6 +404,7 @@ PetalburgCity_Movement_BoyWalkToGym1:
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym2:
+	walk_down
 	walk_right
 	walk_right
 	walk_right
@@ -410,6 +412,7 @@ PetalburgCity_Movement_BoyWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
+	walk_up
 	walk_up
 	walk_right
 	walk_in_place_faster_up
@@ -431,6 +434,7 @@ PetalburgCity_Movement_BoyWalkToGym3:
 
 PetalburgCity_Movement_BoyWalkAway:
 	walk_down
+	walk_down
 	walk_left
 	walk_left
 	walk_left
@@ -445,7 +449,7 @@ PetalburgCity_Movement_BoyWalkAway:
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym0:
-	walk_down
+	walk_up
 	walk_right
 	walk_right
 	walk_right
@@ -473,6 +477,7 @@ PetalburgCity_Movement_PlayerWalkToGym1:
 
 PetalburgCity_Movement_PlayerWalkToGym2:
 	walk_up
+	walk_down
 	walk_right
 	walk_right
 	walk_right
@@ -480,6 +485,7 @@ PetalburgCity_Movement_PlayerWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
+	walk_up
 	walk_up
 	step_end
 
@@ -500,7 +506,7 @@ PetalburgCity_EventScript_Scott0::
 	lockall
 	addobject LOCALID_PETALBURG_SCOTT
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 10
+	setobjectxy LOCALID_PETALBURG_SCOTT, 13, 14
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -553,7 +559,7 @@ PetalburgCity_EventScript_Scott::
 	delay 30
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
 	closemessage
-	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
+	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit3
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_ScottExit2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_ScottExit3
