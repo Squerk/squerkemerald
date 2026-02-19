@@ -30,6 +30,7 @@
 #include "frontier_util.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "hyper_training.h"
 #include "international_string_util.h"
 #include "item.h"
 #include "item_menu.h"
@@ -241,6 +242,7 @@ COMMON_DATA void (*gItemUseCB)(u8, TaskFunc) = NULL;
 static void ResetPartyMenu(void);
 static void CB2_InitPartyMenu(void);
 static void CB2_ReloadPartyMenu(void);
+static void CB2_ChooseMonForHyperTraining(void);
 static bool8 ShowPartyMenu(void);
 static bool8 ReloadPartyMenu(void);
 static void SetPartyMonsAllowedInMinigame(void);
@@ -7412,6 +7414,31 @@ void ChooseMonForTradingBoard(u8 menuType, MainCallback callback)
 void ChooseMonForMoveTutor(void)
 {
     InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_MOVE_TUTOR, FALSE, PARTY_MSG_TEACH_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void ChooseMonForHyperTraining(void)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, 
+                  PARTY_LAYOUT_SINGLE, 
+                  PARTY_ACTION_CHOOSE_AND_CLOSE, 
+                  FALSE, 
+                  PARTY_MSG_CHOOSE_MON, 
+                  Task_HandleChooseMonInput, 
+                  CB2_ChooseMonForHyperTraining);
+}
+
+static void CB2_ChooseMonForHyperTraining(void)
+{
+    gSpecialVar_0x8004 = GetCursorSelectionMonId();
+    
+    if (gSpecialVar_0x8004 >= PARTY_SIZE)
+    {
+        gSpecialVar_0x8004 = PARTY_NOTHING_CHOSEN;
+        gSpecialVar_Result = FALSE;
+    }
+    
+    gFieldCallback2 = CB2_FadeFromPartyMenu;
+    SetMainCallback2(CB2_ReturnToField);
 }
 
 void ChooseMonForWirelessMinigame(void)

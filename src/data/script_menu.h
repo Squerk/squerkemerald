@@ -561,6 +561,13 @@ static const struct MenuAction MultichoiceList_ForcedStartMenu[] =
     {gText_MenuOptionExit},
 };
 
+static const struct MenuAction MultichoiceList_HeartScaleServices[] =
+{
+    {COMPOUND_STRING("Teach Move")},
+    {COMPOUND_STRING("Max IV")},
+    {gText_Cancel2},
+};
+
 static const struct MenuAction MultichoiceList_FrontierGamblerBet[] =
 {
     {COMPOUND_STRING("  5BP")},
@@ -906,6 +913,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_HEART_SCALE_SERVICES]       = MULTICHOICE(MultichoiceList_HeartScaleServices),
 };
 
 const u8 *const gStdStrings[] =
