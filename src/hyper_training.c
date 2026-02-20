@@ -167,8 +167,8 @@ static void Task_ShowSpecificNatureMenu(u8 taskId)
     static const u8 sText_Cancel[] = _("Cancel");
     
     const u8 *menuItems[5];
-    u8 natures[5];
-    u8 menuCount = 0;
+    u8 natures[5] = {NATURE_HARDY, NATURE_BASHFUL, 0, 0, 0};
+    u8 menuCount = 2;
     
     if (statType == 0) // Attack+
     {
