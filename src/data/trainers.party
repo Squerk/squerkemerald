@@ -229,11 +229,47 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Poochyena
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Impidimp @ Wide Lens
+Level: 12
+Hasty Nature
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Draining Kiss
+- Bite
+- Thunder Wave
+
+Gulpin @ Apicot Berry
+Level: 12
+Sassy Nature
+Ability: Gluttony
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acid Spray
+- Knock Off
+- Stuff Cheeks
+- Destiny Bond
+
+Wiglett @ Focus Sash
+Level: 13
+Adamant Nature
+Ability: Gooey
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Stomping Tantrum
+- Throat Chop
+- Sucker Punch
+
+Spidops @ Lum Berry
+Level: 14
+Jolly Nature
+Ability: Stakeout
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pounce
+- Trailblaze
+- Upper Hand
+- Silk Trap
 
 === TRAINER_MARCEL ===
 Name: MARCEL
@@ -2119,13 +2155,29 @@ Class: Lady
 Pic: Lady
 Gender: Female
 Music: Female
-Items: Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Meowth @ Focus Sash
+Level: 8
+Docile Nature
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Metronome
+
+Meowth-Alola @ Focus Band
+Level: 8
+Docile Nature
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Metronome
+
+Meowth-Galar @ Berry Juice
+Level: 8
+Docile Nature
+Ability: Pickup
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Metronome
 
 === TRAINER_DAPHNE ===
 Name: DAPHNE
@@ -2523,13 +2575,37 @@ Class: Rich Boy
 Pic: Rich Boy
 Gender: Male
 Music: Rich
-Items: Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Zigzagoon @ Nugget
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Stufful @ Berry Juice
+Level: 13
+Naive Nature
+Ability: Fluffy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stomp
+- Force Palm
+- Payback
+
+Inkay @ Lum Berry
+Level: 13
+Jolly Nature
+Ability: Contrary
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psycho Cut
+- Night Slash
+- Superpower
+- Hypnosis
+
+Delcatty @ Silk Scarf
+Level: 14
+Jolly Nature
+Ability: Normalize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Wake-Up Slap
+- Sucker Punch
+- Sing
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE
@@ -3229,11 +3305,37 @@ Pic: Black Belt
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Machop
-Level: 19
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Machop @ Lum Berry
+Level: 15
+Jolly Nature
+Ability: Steadfast
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Low Sweep
+- Rock Tomb
+- Dual Chop
+- Bulk Up
+
+Staravia @ Muscle Band
+Level: 15
+Jolly Nature
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pluck
+- Quick Attack
+- Rock Smash
+- Roost
+
+Crabrawler @ Punching Glove
+Level: 15
+Hasty Nature
+Ability: Iron Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power-Up Punch
+- Mach Punch
+- Jet Punch
+- First Impression
 
 === TRAINER_NOB_2 ===
 Name: NOB
@@ -4794,33 +4896,68 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Omniscient / Check Bad Move
 
-Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Glimmet @ Focus Sash
+Level: 18
+Rash Nature
+Ability: Toxic Debris
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Ancient Power
+- Venoshock
+- Self-Destruct
 
-Geodude
-Level: 12
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+Klang @ Eviolite
+Level: 17
+Naughty Nature
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gear Grind
+- Spark
+- Thunder Wave
+- Shift Gear
 
-Nosepass @ Oran Berry
-Level: 15
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
-- Harden
-- Tackle
+Relicanth @ Lum Berry
+Level: 17
+Naive Nature
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ancient Power
+- Liquidation
+- Earthquake
+- Rock Polish
+
+Magcargo @ Passho Berry
+Level: 17
+Mild Nature
+Ability: Flame Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ancient Power
+- Incinerate
+- Earth Power
+- Shell Smash
+
+Graveler-Alola @ Air Balloon
+Level: 18
+Adamant Nature
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Rock Slide
+- Stomping Tantrum
+- Self-Destruct
+
+Bombirdier @ Rock Gem
+Level: 18
+Jolly Nature
+Ability: Rocky Payload 
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dual Wingbeat
+- Sucker Punch
 - Rock Tomb
+- Roost
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -5999,12 +6136,47 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Geodude
-Level: 10
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
+Hippopotas @ Lum Berry
+Level: 16
+Relaxed Nature
+Ability: Sand Stream
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Rock Slide
+- Yawn
+- Slack Off
+
+Bergmite @ Safety Goggles
+Level: 15
+Impish Nature
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Avalanche
+- Rock Slide
+- Ice Shard
+- Mirror Coat
+
+Clefairy @ Power Herb
+Level: 16
+Modest Nature
+Ability: Magic Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Meteor Beam
+- Draining Kiss
+- Stored Power
+- Life Dew
+
+Larvitar @ Flame Orb
+Level: 15
+Adamant Nature
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bulldoze
+- Rock Tomb
+- Dragon Dance
+- Protect
 
 === TRAINER_TOMMY ===
 Name: TOMMY
@@ -6013,15 +6185,37 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Geodude
-Level: 8
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+Carbink @ Light Clay
+Level: 16
+Bold Nature
+Ability: Clear Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Reflect
+- Light Screen
+- Body Press
 
-Geodude
-Level: 8
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Naclstack @ Leftovers
+Level: 16
+Impish Nature
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Salt Cure
+- Recover
+- Curse
+
+Carkol @ Passho Berry
+Level: 16
+Rash Nature
+Ability: Steam Engine
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flame Burst
+- Ancient Power
+- Fire Spin
+- Earth Power
 
 === TRAINER_JOEY ===
 Name: JOEY
@@ -6386,19 +6580,47 @@ Pic: Fisherman
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Poliwhirl @ Lum Berry
+Level: 15
+Hasty Nature
+Ability: Water Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Icy Wind
+- Earth Power
+- Superpower
 
-Magikarp
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Eelektrik @ Leftovers
+Level: 15
+Impish Nature
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Punch
+- Knock Off
+- Super Fang
+- Thunder Wave
 
-Magikarp
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tentacool @ Black Sludge
+Level: 15
+Bold Nature
+Ability: Liquid Ooze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brine
+- Venoshock
+- Wrap
+- Toxic
+
+Lombre @ Lum Berry
+Level: 15
+Timid Nature
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Bubble Beam
+- Giga Drain
+- Teeter Dance
 
 === TRAINER_CLAUDE ===
 Name: CLAUDE
@@ -7923,15 +8145,37 @@ Pic: Battle Girl
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Meditite
-Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Sneasel-Hisui @ Lum Berry
+Level: 15
+Jolly Nature
+Ability: Inner Focus
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Tail
+- Brick Break
+- Ice Punch
+- Metal Claw
 
-Makuhita
-Level: 18
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Scraggy @ Eviolite
+Level: 15
+Impish Nature
+Ability: Shed Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Power-Up Punch
+- Payback
+- Rest
+
+Clobbopus @ Binding Band
+Level: 15
+Impish Nature
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bind
+- Whirlpool
+- Rock Smash
+- Detect
 
 === TRAINER_CORA ===
 Name: CORA
@@ -8863,15 +9107,47 @@ Pic: Twins
 Gender: Male
 Music: Twins
 Double Battle: Yes
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Seedot
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tinkatuff @ Occa Berry
+Level: 15
+Careful Nature
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fake Out
+- Covet
+- Rock Smash
+- Helping Hand
 
-Lotad
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Riolu @ Kee Berry
+Level: 15
+Adamant Nature
+Ability: Steadfast
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Force Palm
+- Metal Claw
+- Zen Headbutt
+- Detect
+
+Chingling @ Wise Glasses
+Level: 15
+Modest Nature
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Dazzling Gleam
+- Hyper Voice
+- Protect
+
+Togetic @ Lum Berry
+Level: 15
+Bold Nature
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Follow Me
+- Yawn
+- Life Dew
+- Disarming Voice
 
 === TRAINER_MIU_AND_YUKI ===
 Name: MIU & YUKI
@@ -9411,15 +9687,37 @@ Pic: Collector
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Zangoose
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Baltoy @ Lum Berry
+Level: 15
+Calm Nature
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Mud Shot
+- Ancient Power
+- Shadow Ball
 
-Seviper
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Yamask @ Spell Tag
+Level: 15
+Modest Nature
+Ability: Mummy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hex
+- Infestation
+- Will-o-Wisp
+- Confuse Ray
+
+Frigibax @ Never-Melt Ice
+Level: 16
+Jolly Nature
+Ability: Thermal Exchange
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Dragon Tail
+- Bite
+- Focus Energy
 
 === TRAINER_TABITHA_MOSSDEEP ===
 Name: TABITHA
@@ -10623,15 +10921,54 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Geodude
-Level: 8
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+Onix @ Weakness Policy
+Level: 16
+Jolly Nature
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Rock Slide
+- Iron Head
+- Breaking Swipe
 
-Geodude
-Level: 8
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Lileep @ Leftovers
+Level: 16
+Bold Nature
+Ability: Storm Drain
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Drain
+- Ancient Power
+- Brine
+- Recover
+
+Amaura @ Metronome
+Level: 16
+Modest Nature
+Ability: Refrigerate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Echoed Voice
+
+Anorith @ Water Gem
+Level: 16
+Adamant Nature
+Ability: Battle Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bug Bite
+- Aqua Jet
+- Hone Claws
+
+Klawf @ Berry Juice
+Level: 16
+Naughty Nature
+Ability: Anger Shell
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Bulldoze
+- Razor Shell
+- Trailblaze
 
 === TRAINER_BRENDEN ===
 Name: BRENDEN
@@ -11119,7 +11456,7 @@ Double Battle: No
 AI: Omniscient / Check Bad Move
 
 Skiploom @ Miracle Seed
-Level: 8
+Level: 10
 Quirky Nature
 Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -11128,7 +11465,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leech Seed
 
 Numel @ Charcoal
-Level: 8
+Level: 9
 Quirky Nature
 Ability: Oblivious
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -11137,7 +11474,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
 
 Palpitoad @ Mystic Water
-Level: 8
+Level: 10
 Quirky Nature
 Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -11152,15 +11489,37 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Lotad
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Minccino @ Loaded Dice
+Level: 14
+Jolly Nature
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tail Slap
+- Bullet Seed
+- Triple Axel
+- Sing
 
-Shroomish
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ponyta-Galar @ Lum Berry
+Level: 14
+Jolly Nature
+Ability: Pastel Veil
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Psycho Cut
+- Flame Wheel
+- Will-o-Wisp
+
+Dolliv @ Sitrus Berry
+Level: 14
+Calm Nature
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Weather Ball
+- Leech Seed
+- Sunny Day
 
 === TRAINER_JANICE ===
 Name: JANICE
@@ -11464,15 +11823,37 @@ Pic: Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Nincada
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Charjabug @ Lum Berry
+Level: 11
+Relaxed Nature
+Ability: Battery
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sticky Web
+- X-Scissor
+- Spark
+- Thunder Wave
 
-Nincada
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dottler @ Light Clay
+Level: 11
+Relaxed Nature
+Ability: Swarm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Struggle Bug
+- Reflect
+- Light Screen
+
+Swadloon @ Custap Berry
+Level: 12
+Relaxed Nature
+Ability: Overcoat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Bite
+- Seed Bomb
+- Flail
+- Endure
 
 === TRAINER_JAMES_2 ===
 Name: JAMES
@@ -13943,15 +14324,37 @@ Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Omniscient / Check Bad Move
 
-Meditite
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slowpoke-Galar @ Lum Berry
+Level: 15
+Relaxed Nature
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psybeam
+- Sludge
+- Water Pulse
+- Slack Off
 
-Spoink
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kirlia @ Eviolite
+Level: 15
+Calm Nature
+Ability: Trace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draining Kiss
+- Psybeam
+- Magical Leaf
+- Calm Mind
+
+Exeggcute @ Starf Berry
+Level: 15
+Bold Nature
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stored Power
+- Hypnosis
+- Leech Seed
+- Synthesis
 
 === TRAINER_DEVAN ===
 Name: DEVAN
