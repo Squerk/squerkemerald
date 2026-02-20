@@ -928,7 +928,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "If you use a PC, you can prompt a\n"
-	.string "Gen AI model and kill an entire\n"
+	.string "Gen AI model and kill an entire\l"
 	.string "family in Memphis.\p"
 	.string "The power of science is staggering!$"
 
