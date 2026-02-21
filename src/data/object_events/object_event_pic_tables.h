@@ -338,6 +338,14 @@ static const struct SpriteFrameImage sPicTable_UnusedPorygon2Doll[] = {
     obj_frame_tiles(gObjectEventPic_UnusedPorygon2Doll),
 };
 
+static const struct SpriteFrameImage sPicTable_GoldItemBall[] = {
+    obj_frame_tiles(gObjectEventPic_GoldItemBall),
+};
+
+static const struct SpriteFrameImage sPicTable_MegaStone[] = {
+    obj_frame_tiles(gObjectEventPic_MegaStone),
+};
+
 static const struct SpriteFrameImage sPicTable_CuttableTree[] = {
     overworld_ascending_frames(gObjectEventPic_CuttableTree, 2, 2),
 };
