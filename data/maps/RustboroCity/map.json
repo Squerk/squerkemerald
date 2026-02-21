@@ -247,36 +247,36 @@
   ],
   "warp_events": [
     {
-      "x": 27,
+      "x": 31,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_GYM",
       "dest_warp_id": "0"
     },
     {
-      "x": 13,
-      "y": 30,
+      "x": 9,
+      "y": 29,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_FLAT1_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 16,
-      "y": 45,
+      "x": 11,
+      "y": 39,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
-      "y": 38,
+      "y": 39,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 27,
-      "y": 37,
+      "y": 39,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_POKEMON_SCHOOL",
       "dest_warp_id": "0"
@@ -296,15 +296,15 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 33,
-      "y": 19,
+      "x": 31,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 9,
-      "y": 38,
+      "x": 29,
+      "y": 46,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_CUTTERS_HOUSE",
       "dest_warp_id": "0"
@@ -317,15 +317,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
-      "y": 51,
+      "x": 15,
+      "y": 33,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_FLAT2_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 26,
-      "y": 44,
+      "y": 46,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_HOUSE3",
       "dest_warp_id": "0"
@@ -534,15 +534,15 @@
     {
       "type": "sign",
       "x": 25,
-      "y": 35,
+      "y": 40,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_TrainersSchoolSign"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 45,
+      "x": 13,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -550,7 +550,7 @@
     {
       "type": "sign",
       "x": 18,
-      "y": 38,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -565,8 +565,8 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 45,
+      "x": 12,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -574,7 +574,7 @@
     {
       "type": "sign",
       "x": 17,
-      "y": 38,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -597,8 +597,8 @@
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 38,
+      "x": 32,
+      "y": 46,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_CuttersHouseSign"
