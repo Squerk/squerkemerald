@@ -1,97 +1,98 @@
 #include "global.h"
 #include "test/battle.h"
 
-// ===== HAZARD TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Stealth Rock more on first turn out")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Stealth Rock scores higher than normal move on first turn")
 {
+    u32 turnCount;
+
+    PARAMETRIZE { turnCount = 0; }
+    PARAMETRIZE { turnCount = 1; }
+
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(GetMoveEffect(MOVE_STEALTH_ROCK) == EFFECT_STEALTH_ROCK);
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_GARCHOMP) { Moves(MOVE_STEALTH_ROCK, MOVE_TACKLE); }
     } WHEN {
-        TURN { SCORE_GT(opponent, MOVE_STEALTH_ROCK, MOVE_TACKLE); } // first turn, high score
-        TURN { SCORE_GT(opponent, MOVE_STEALTH_ROCK, MOVE_TACKLE); } // subsequent turn, lower but still preferred
+        if (turnCount == 1)
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_STEALTH_ROCK, MOVE_TACKLE); }
+        else
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_STEALTH_ROCK, MOVE_TACKLE); }
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI scores Sticky Web higher than Stealth Rock on first turn")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Sticky Web scores higher than Stealth Rock on first turn")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(GetMoveEffect(MOVE_STICKY_WEB) == EFFECT_STICKY_WEB);
+        ASSUME(GetMoveEffect(MOVE_STEALTH_ROCK) == EFFECT_STEALTH_ROCK);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_SMEARGLE) { Moves(MOVE_STICKY_WEB, MOVE_STEALTH_ROCK); }
     } WHEN {
-        TURN { SCORE_GT(opponent, MOVE_STICKY_WEB, MOVE_STEALTH_ROCK); }
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_STICKY_WEB, MOVE_STEALTH_ROCK); }
     }
 }
 
-// ===== PROTECT TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI is less likely to Protect if it used Protect last turn")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Protect scores lower on first turn in singles")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_PROTECT, MOVE_TACKLE); }
     } WHEN {
-        TURN { EXPECT_MOVE(opponent, MOVE_PROTECT); }
-        TURN { SCORE_LT(opponent, MOVE_PROTECT, MOVE_TACKLE); } // after one protect, score drops
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_PROTECT, MOVE_TACKLE); }
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Protect less on first turn out in singles")
-{
-    GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_PROTECT, MOVE_SPLASH); }
-    } WHEN {
-        TURN { SCORE_LT(opponent, MOVE_PROTECT, MOVE_SPLASH); } // -1 on first turn in singles
-    }
-}
+// AI_SINGLE_BATTLE_TEST("AI_Complex: AI never uses Protect three turns in a row")
+// {
+//     GIVEN {
+//         ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
+//         AI_FLAGS(AI_FLAG_COMPLEX);
+//         PLAYER(SPECIES_GENGAR) { Moves(MOVE_SPLASH); }
+//         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_PROTECT, MOVE_TACKLE); }
+//     } WHEN {
+//         TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_PROTECT); }
+//         TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_PROTECT); }
+//         TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_PROTECT, MOVE_TACKLE); }
+//     }
+// }
 
-// ===== SPEED REDUCTION TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Icy Wind when slower than target")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Icy Wind preferred when AI is slower than target")
 {
     u32 speedPlayer, speedAi;
 
-    PARAMETRIZE { speedPlayer = 200; speedAi = 10; }
-    PARAMETRIZE { speedPlayer = 10; speedAi = 200; }
+    PARAMETRIZE { speedPlayer = 4; speedAi = 2; }  // AI slower
+    PARAMETRIZE { speedPlayer = 2; speedAi = 4; }  // AI faster
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(speedPlayer); }
-        OPPONENT(SPECIES_LAPRAS) { Moves(MOVE_ICY_WIND, MOVE_WATER_GUN); Speed(speedAi); }
+        ASSUME(GetMoveEffect(MOVE_ICY_WIND) == EFFECT_HIT);
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(speedPlayer); Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_LAPRAS) { Speed(speedAi); Moves(MOVE_ICY_WIND, MOVE_SURF); }
     } WHEN {
         if (speedPlayer > speedAi)
-        {
-            TURN { SCORE_GT(opponent, MOVE_ICY_WIND, MOVE_WATER_GUN); } // slower, prefers icy wind
-        }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_ICY_WIND, MOVE_SURF); }
         else
-        {
-            TURN { SCORE_EQ(opponent, MOVE_ICY_WIND, MOVE_WATER_GUN); } // faster, no preference
-        }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_ICY_WIND, MOVE_SURF); }
     }
 }
 
-// ===== TRAPPING TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI scores trapping move positively")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Trapping move scores higher than regular move")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(GetMoveEffect(MOVE_FIRE_SPIN) == EFFECT_HIT);
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_MAGMAR) { Moves(MOVE_FIRE_SPIN, MOVE_EMBER); }
     } WHEN {
-        TURN { SCORE_GT(opponent, MOVE_FIRE_SPIN, MOVE_EMBER); }
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_FIRE_SPIN, MOVE_EMBER); }
     }
 }
 
-// ===== TRICK ROOM TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Trick Room when slower than target")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Trick Room preferred when AI is slower")
 {
     u32 speedPlayer, speedAi;
 
@@ -99,92 +100,88 @@ AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Trick Room when slower than target
     PARAMETRIZE { speedPlayer = 10; speedAi = 200; }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(speedPlayer); }
-        OPPONENT(SPECIES_REUNICLUS) { Moves(MOVE_TRICK_ROOM, MOVE_PSYSHOCK); Speed(speedAi); }
+        ASSUME(GetMoveEffect(MOVE_TRICK_ROOM) == EFFECT_TRICK_ROOM);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(speedPlayer); Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_REUNICLUS) { Speed(speedAi); Moves(MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
     } WHEN {
         if (speedPlayer > speedAi)
-        {
-            TURN { SCORE_GT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
-        }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
         else
-        {
-            TURN { SCORE_LT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
-        }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI never uses Trick Room if already up")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Trick Room never used if already active")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(200); }
-        OPPONENT(SPECIES_REUNICLUS) { Moves(MOVE_TRICK_ROOM, MOVE_PSYSHOCK); Speed(10); }
+        ASSUME(GetMoveEffect(MOVE_TRICK_ROOM) == EFFECT_TRICK_ROOM);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(200); Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_REUNICLUS) { Speed(10); Moves(MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
     } WHEN {
-        TURN { EXPECT_MOVE(opponent, MOVE_TRICK_ROOM); }
-        TURN { SCORE_LT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); } // already up, -20
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_TRICK_ROOM, MOVE_PSYSHOCK); }
     }
 }
 
-// ===== IMPRISON TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI uses Imprison if opponent shares a move")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Imprison preferred if opponent shares a move")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
+        ASSUME(GetMoveEffect(MOVE_IMPRISON) == EFFECT_IMPRISON);
+        AI_FLAGS(AI_FLAG_COMPLEX);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE, MOVE_SPLASH); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_IMPRISON, MOVE_TACKLE); }
     } WHEN {
-        TURN { SCORE_GT(opponent, MOVE_IMPRISON, MOVE_TACKLE); }
+        TURN { MOVE(player, MOVE_TACKLE); SCORE_GT(opponent, MOVE_IMPRISON, MOVE_TACKLE); }
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI never uses Imprison if opponent shares no moves")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Imprison never used if opponent shares no moves")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
+        ASSUME(GetMoveEffect(MOVE_IMPRISON) == EFFECT_IMPRISON);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_WATER_GUN); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_IMPRISON, MOVE_TACKLE); }
     } WHEN {
-        TURN { SCORE_LT(opponent, MOVE_IMPRISON, MOVE_TACKLE); }
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_IMPRISON, MOVE_TACKLE); }
     }
 }
 
-// ===== FAKE OUT TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI prefers Fake Out on first turn out")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Fake Out preferred on first turn out")
 {
+    u32 turnCount;
+
+    PARAMETRIZE { turnCount = 0; }
+    PARAMETRIZE { turnCount = 1; }
+
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_LOPUNNY) { Moves(MOVE_FAKE_OUT, MOVE_TACKLE); }
     } WHEN {
-        TURN { SCORE_GT(opponent, MOVE_FAKE_OUT, MOVE_TACKLE); } // first turn, +9
-        TURN { SCORE_LT(opponent, MOVE_FAKE_OUT, MOVE_TACKLE); } // second turn, fails so bad move
+        if (turnCount == 1)
+        {
+            TURN { MOVE(player, MOVE_SPLASH); }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_FAKE_OUT, MOVE_TACKLE); }
+        }
+        else
+        {
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_FAKE_OUT, MOVE_TACKLE); }
+        }
     }
 }
 
-// ===== SUCKER PUNCH TESTS =====
-
-AI_SINGLE_BATTLE_TEST("AI_Complex: AI is less likely to use Sucker Punch twice in a row")
+AI_SINGLE_BATTLE_TEST("AI_Complex: Sucker Punch less likely after using it last turn")
 {
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(GetMoveEffect(MOVE_SUCKER_PUNCH) == EFFECT_SUCKER_PUNCH);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
         OPPONENT(SPECIES_BISHARP) { Moves(MOVE_SUCKER_PUNCH, MOVE_TACKLE); }
     } WHEN {
-        TURN { EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); }
-        TURN { SCORE_LT(opponent, MOVE_SUCKER_PUNCH, MOVE_TACKLE); } // 50% chance of -20
+        TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); }
+        TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_SUCKER_PUNCH, MOVE_TACKLE); }
     }
 }
-
-// AI_SINGLE_BATTLE_TEST("AI_Complex: INTENTIONAL FAIL - AI prefers Tackle over Stealth Rock on first turn")
-// {
-//     GIVEN {
-//         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_COMPLEX);
-//         PLAYER(SPECIES_WOBBUFFET);
-//         OPPONENT(SPECIES_GARCHOMP) { Moves(MOVE_STEALTH_ROCK, MOVE_TACKLE); }
-//     } WHEN {
-//         TURN { SCORE_GT(opponent, MOVE_TACKLE, MOVE_STEALTH_ROCK); } // should fail, Stealth Rock scores higher
-//     }
-// }

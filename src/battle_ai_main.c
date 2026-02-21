@@ -97,8 +97,8 @@ static s32 (*const sBattleAiFuncTable[])(u32, u32, u32, s32) =
         [28] = NULL,                  // AI_FLAG_ASSUME_STAB
         [29] = NULL,                  // AI_FLAG_ASSUME_STATUS_MOVES
         [30] = AI_AttacksPartner,     // AI_FLAG_ATTACKS_PARTNER
-        [31] = AI_Complex,            // AI_FLAG_COMPLEX
-        [32] = NULL,                  // Unused
+        [31] = NULL,            // know opponents party
+        [32] = AI_Complex,            // AI_FLAG_COMPLEX
         [33] = NULL,                  // Unused
         [34] = NULL,                  // Unused
         [35] = NULL,                  // Unused
@@ -6581,7 +6581,7 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
 
     case EFFECT_STEALTH_ROCK:
         if (firstTurn)
-            ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 8 : 9);
+            ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 9 : 10);
         else
             ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 6 : 7);
         break;
@@ -6608,7 +6608,7 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
 
     case EFFECT_STICKY_WEB:
         if (firstTurn)
-            ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 9 : 12);
+            ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 10 : 12);
         else
             ADJUST_SCORE(AI_ComplexRandLessThan(25) ? 6 : 9);
         break;
@@ -6643,11 +6643,11 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
                 protectScore -= 2;
             if (defHasNegativeCondition)
                 protectScore += 1;
-            if (gBattleResults.battleTurnCounter == 0 && !(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
+            if (gDisableStructs[battlerAtk].isFirstTurn && !(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
                 protectScore -= 1;
 
             // Never protect if AI dies to residual damage afterwards
-            if (BattlerWillFaintFromSecondaryDamage(battlerAtk, aiData->abilities[battlerAtk]))
+            if (GetBattlerSecondaryDamage(battlerAtk) >= gBattleMons[battlerAtk].hp)
                 break;
 
             // Used protect last 2 turns - never protect
@@ -6658,7 +6658,7 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
             }
 
             // Used protect last turn - 50% chance to not protect
-            if (gDisableStructs[battlerAtk].protectUses == 1 && AI_ComplexRandLessThan(50))
+            if (gDisableStructs[battlerAtk].protectUses == 1 && Random() % 100 < 50)
             {
                 ADJUST_SCORE(-20);
                 break;
@@ -6913,6 +6913,7 @@ static s32 AI_ComplexAdditionalEffects(u32 battlerAtk, u32 battlerDef, u32 move,
     bool32 isHighestDmgMove = (move == GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING));
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, aiData);
     bool32 aiFaster = AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY);
+    bool32 aiIsSlower = gBattleMons[battlerAtk].speed < gBattleMons[battlerDef].speed;
     bool32 defHasStatImmunity = (aiData->abilities[battlerDef] == ABILITY_CONTRARY || aiData->abilities[battlerDef] == ABILITY_CLEAR_BODY || aiData->abilities[battlerDef] == ABILITY_WHITE_SMOKE);
 
     for (u32 i = 0; i < additionalEffectCount; i++)
@@ -6931,13 +6932,20 @@ static s32 AI_ComplexAdditionalEffects(u32 battlerAtk, u32 battlerDef, u32 move,
             break;
         case MOVE_EFFECT_SPD_MINUS_1:
         case MOVE_EFFECT_SPD_MINUS_2:
+            DebugPrintf("move=%d, aiIsSlower=%d defHasStatImmunity=%d atkSpd=%d defSpd=%d ishighestdmgmove=%d",
+                move,
+                aiIsSlower,
+                defHasStatImmunity,
+                gBattleMons[battlerAtk].speed,
+                gBattleMons[battlerDef].speed,
+                isHighestDmgMove);
             if (isHighestDmgMove)
             {
                 ADJUST_SCORE(AI_ComplexRandLessThan(20) ? 8 : 6);
             }
             else
             {
-                ADJUST_SCORE(!defHasStatImmunity && !aiFaster ? 6 : 5);
+                ADJUST_SCORE(!defHasStatImmunity && aiIsSlower ? 7 : 5);
                 if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && IsSpreadMove(move))
                     ADJUST_SCORE(1);
             }
@@ -6985,6 +6993,12 @@ static s32 AI_ComplexAdditionalEffects(u32 battlerAtk, u32 battlerDef, u32 move,
 
 static s32 AI_Complex(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
+    bool32 isHighestDmgMove = (move == GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING));
+
+    // Highest damaging move bonus
+    if (isHighestDmgMove && !IsBattleMoveStatus(move))
+        ADJUST_SCORE(6);
+
     score = AI_ComplexMoveEffects(battlerAtk, battlerDef, move, score);
     score = AI_ComplexSpecificMoves(battlerAtk, battlerDef, move, score);
     score = AI_ComplexAdditionalEffects(battlerAtk, battlerDef, move, score);
