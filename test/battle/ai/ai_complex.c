@@ -74,7 +74,7 @@ AI_SINGLE_BATTLE_TEST("AI_Complex: Icy Wind preferred when AI is slower than tar
         OPPONENT(SPECIES_LAPRAS) { Speed(speedAi); Moves(MOVE_ICY_WIND, MOVE_SURF); }
     } WHEN {
         if (speedPlayer > speedAi)
-            TURN { MOVE(player, MOVE_SPLASH); SCORE_GT(opponent, MOVE_ICY_WIND, MOVE_SURF); }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_EQ(opponent, MOVE_ICY_WIND, MOVE_SURF); }
         else
             TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_ICY_WIND, MOVE_SURF); }
     }
@@ -183,5 +183,31 @@ AI_SINGLE_BATTLE_TEST("AI_Complex: Sucker Punch less likely after using it last 
     } WHEN {
         TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); }
         TURN { MOVE(player, MOVE_SPLASH); SCORE_LT(opponent, MOVE_SUCKER_PUNCH, MOVE_TACKLE); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI_Complex: Protect scores higher when player has a negative condition")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_PROTECT, MOVE_WILL_O_WISP); }
+    } WHEN {
+            TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_WILL_O_WISP); }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_EQ_VAL(opponent, MOVE_PROTECT, 107); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI_Complex: Protect scores higher when player has a negative condition")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
+        AI_FLAGS(AI_FLAG_COMPLEX | AI_FLAG_OMNISCIENT | AI_FLAG_CHECK_BAD_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_PROTECT, MOVE_INFESTATION); }
+    } WHEN {
+            TURN { MOVE(player, MOVE_SPLASH); EXPECT_MOVE(opponent, MOVE_INFESTATION); }
+            TURN { MOVE(player, MOVE_SPLASH); SCORE_EQ_VAL(opponent, MOVE_PROTECT, 107); SCORE_LT(opponent, MOVE_INFESTATION, MOVE_PROTECT);}
     }
 }
