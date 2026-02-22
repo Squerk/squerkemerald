@@ -320,6 +320,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE104",
       "dest_warp_id": "9"
+    },
+    {
+      "x": 42,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HIDEAWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_HIDEAWAY",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
