@@ -31,6 +31,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
 static bool32 CanAbilityTrapOpponent(enum Ability ability, u32 opponent);
 static u32 GetHPHealAmount(u8 itemEffectParam, struct Pokemon *mon);
 static u32 GetBattleMonTypeMatchup(struct BattlePokemon opposingBattleMon, struct BattlePokemon battleMon);
+static bool32 ShouldSwitchIfComplexAI(u32 battler);
 
 static void InitializeSwitchinCandidate(struct Pokemon *mon)
 {
@@ -1196,6 +1197,8 @@ bool32 ShouldSwitch(u32 battler)
         return TRUE;
     if (ShouldSwitchIfTruant(battler))
         return TRUE;
+    if (ShouldSwitchIfComplexAI(battler))
+        return TRUE;
     if (ShouldSwitchIfAllMovesBad(battler))
         return TRUE;
     if (ShouldSwitchIfBadlyStatused(battler))
@@ -1226,6 +1229,107 @@ bool32 ShouldSwitch(u32 battler)
     if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 50)
         || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 33))
         return TRUE;
+
+    return FALSE;
+}
+
+static bool32 ShouldSwitchIfComplexAI(u32 battler)
+{
+    s32 i, firstId, lastId;
+    struct Pokemon *party;
+    u32 battlerDef = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler)));
+
+    // Only in single battles
+    if (IsDoubleBattle())
+        return FALSE;
+
+    // Only if AI_FLAG_COMPLEX is set
+    if (!(gAiThinkingStruct->aiFlags[battler] & AI_FLAG_COMPLEX))
+        return FALSE;
+
+    // AI must not be below 50% HP
+    if (gAiLogicData->hpPercents[battler] < 50)
+        return FALSE;
+
+    // All moves must be scoring <= -5
+    bool32 allMovesBad = TRUE;
+    for (u32 j = 0; j < MAX_MON_MOVES; j++)
+    {
+        if (gBattleMons[battler].moves[j] == MOVE_NONE)
+            continue;
+        if (gAiThinkingStruct->score[j] > -5)
+        {
+            allMovesBad = FALSE;
+            break;
+        }
+    }
+    if (!allMovesBad)
+        return FALSE;
+
+    // Check if there's a mon in party that is faster and not OHKO'd
+    // or slower and not 2HKO'd (but due to bug, once a faster mon is found
+    // all subsequent mons are considered faster too)
+    GetAIPartyIndexes(battler, &firstId, &lastId);
+    party = GetBattlerParty(battler);
+
+    bool32 foundFasterMon = FALSE;
+    bool32 validMonExists = FALSE;
+
+    for (i = firstId; i < lastId; i++)
+    {
+        if (!IsValidForBattle(&party[i]))
+            continue;
+        if (i == gBattlerPartyIndexes[battler])
+            continue;
+        if (i == gBattleStruct->monToSwitchIntoId[battler])
+            continue;
+
+        u32 monSpeed = GetMonData(&party[i], MON_DATA_SPEED);
+        u32 defSpeed = gBattleMons[battlerDef].speed;
+
+        // Calculate best damage defender can do to this party mon
+        u32 monHp = GetMonData(&party[i], MON_DATA_HP);
+        u32 monMaxHp = GetMonData(&party[i], MON_DATA_MAX_HP);
+
+        // Bug replication: once a faster mon is found, treat all subsequent mons as faster
+        bool32 monIsFaster = foundFasterMon || (monSpeed > defSpeed);
+        if (monSpeed > defSpeed)
+            foundFasterMon = TRUE;
+
+        u32 bestDefDmg = 0;
+        for (u32 k = 0; k < MAX_MON_MOVES; k++)
+        {
+            u32 defMove = gBattleMons[battlerDef].moves[k];
+            if (defMove == MOVE_NONE)
+                continue;
+            if (IsBattleMoveStatus(defMove))
+                continue;
+            // Use a rough damage estimate against this party mon
+            u32 dmg = AI_CalcDamage(defMove, battlerDef, battler, NULL, NO_GIMMICK, NO_GIMMICK, AI_GetWeather()).maximum;
+            if (dmg > bestDefDmg)
+                bestDefDmg = dmg;
+        }
+
+        if (monIsFaster && bestDefDmg < monHp)
+        {
+            validMonExists = TRUE;
+            break;
+        }
+        else if (!monIsFaster && bestDefDmg * 2 < monHp)
+        {
+            validMonExists = TRUE;
+            break;
+        }
+    }
+
+    if (!validMonExists)
+        return FALSE;
+
+    // 50% chance to switch
+    if (Random() % 100 < 50)
+    {
+        return TRUE;
+    }
 
     return FALSE;
 }

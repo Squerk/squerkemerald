@@ -7214,7 +7214,22 @@ static s32 AI_ComplexSpecificMoves(u32 battlerAtk, u32 battlerDef, u32 move, s32
     case MOVE_FAKE_OUT:
         if (gBattleResults.battleTurnCounter == 0 && aiData->abilities[battlerDef] != ABILITY_SHIELD_DUST && aiData->abilities[battlerDef] != ABILITY_INNER_FOCUS)
             ADJUST_SCORE(9);
-        break;
+        if (gDisableStructs[battlerAtk].isFirstTurn
+            && aiData->abilities[battlerDef] != ABILITY_SHIELD_DUST
+            && aiData->abilities[battlerDef] != ABILITY_INNER_FOCUS)
+        {
+            // Doubles bonus: partner has Steadfast
+            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
+                && aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_STEADFAST)
+                ADJUST_SCORE(12);
+            else
+                ADJUST_SCORE(9);
+        }
+        else
+        {
+            ADJUST_SCORE(-20);
+        }
+    break;
 
     case MOVE_ROLE_PLAY:
     {
@@ -8037,11 +8052,68 @@ static s32 AI_ComplexAdditionalEffects(u32 battlerAtk, u32 battlerDef, u32 move,
 
 static s32 AI_Complex(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
-    bool32 isHighestDmgMove = (move == GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING));
+    struct AiLogicData *aiData = gAiLogicData;
+    u32 moveIndex = gAiThinkingStruct->movesetIndex;
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, aiData);
+    bool32 aiIsSlower = AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY);
 
-    // Highest damaging move bonus
-    if (isHighestDmgMove && !IsBattleMoveStatus(move))
-        ADJUST_SCORE(6);
+    // Moves excluded from highest damage roll and highest damage bonus
+    bool32 excludedFromDmgRoll = (move == MOVE_EXPLOSION
+                               || move == MOVE_SELF_DESTRUCT
+                               || move == MOVE_MISTY_EXPLOSION
+                               || move == MOVE_FINAL_GAMBIT
+                               || move == MOVE_RELIC_SONG
+                               || move == MOVE_ROLLOUT
+                               || move == MOVE_ICE_BALL
+                               || move == MOVE_METEOR_BEAM
+                               || MoveHasAdditionalEffect(move, MOVE_EFFECT_WRAP));
+
+    bool32 isHighestDmgMove = !excludedFromDmgRoll
+                           && (move == GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING));
+
+    if (!IsBattleMoveStatus(move))
+    {
+        bool32 canKO = AI_GetDamage(battlerDef, battlerAtk, moveIndex, AI_ATTACKING, aiData) >= gBattleMons[battlerDef].hp
+                    && !CanEndureHit(battlerDef, battlerAtk, moveIndex);
+        bool32 moveHasPriority = GetMovePriority(move) > 0;
+        bool32 fastKill = !aiIsSlower || moveHasPriority;
+
+        // Excluded moves that can still check for kills: Relic Song, Meteor Beam, trapping, Future Sight
+        // Explosion, Final Gambit, Rollout never check kills
+        bool32 canCheckKO = (move != MOVE_EXPLOSION
+                          && move != MOVE_SELF_DESTRUCT
+                          && move != MOVE_MISTY_EXPLOSION
+                          && move != MOVE_FINAL_GAMBIT
+                          && move != MOVE_ROLLOUT
+                          && move != MOVE_ICE_BALL);
+
+        if (canCheckKO && canKO)
+        {
+            ADJUST_SCORE(fastKill ? (AI_ComplexRandLessThan(80) ? 12 : 14)
+                                  : (AI_ComplexRandLessThan(80) ? 9 : 11));
+
+            // Moxie/Beast Boost/etc bonus on kill
+            u32 atkAbility = aiData->abilities[battlerAtk];
+            if (atkAbility == ABILITY_MOXIE
+                || atkAbility == ABILITY_BEAST_BOOST
+                || atkAbility == ABILITY_CHILLING_NEIGH
+                || atkAbility == ABILITY_GRIM_NEIGH)
+                ADJUST_SCORE(1);
+        }
+        else if (isHighestDmgMove)
+        {
+            ADJUST_SCORE(AI_ComplexRandLessThan(80) ? 6 : 8);
+        }
+
+        // High crit chance + super effective bonus
+        if (!canKO || !canCheckKO)
+        {
+            bool32 superEffective = aiData->effectiveness[battlerAtk][battlerDef][moveIndex] > UQ_4_12(1.0);
+            bool32 highCritChance = GetMoveCriticalHitStage(move) > 0; // assumption on function
+            if (superEffective && highCritChance && AI_ComplexRandLessThan(50))
+                ADJUST_SCORE(1);
+        }
+    }
 
     score = AI_ComplexMoveEffects(battlerAtk, battlerDef, move, score);
     score = AI_ComplexSpecificMoves(battlerAtk, battlerDef, move, score);
