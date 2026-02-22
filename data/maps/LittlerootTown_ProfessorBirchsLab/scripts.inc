@@ -539,6 +539,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_QUICK_BALL, 15
 	giveitem ITEM_SUPER_ROD
+	giveitem ITEM_INFINITE_REPEL
+	giveitem ITEM_INFINITE_CANDY
+	giveitem ITEM_PORTA_HEAL
 	setflag FLAG_RECEIVED_SUPER_ROD
 	setflag FLAG_RECEIVED_OLD_ROD
 	setflag FLAG_RECEIVED_GOOD_ROD

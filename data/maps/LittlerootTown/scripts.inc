@@ -430,6 +430,7 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger0::
 	setvar VAR_0x8008, 0
 	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkDown
 	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkDown
+	delay 10
 	setobjectxy LOCALID_LITTLEROOT_MOM, 10, 9
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
@@ -439,6 +440,7 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger1::
 	setvar VAR_0x8008, 1
 	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkDown
 	applymovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkDown
+	delay 10
 	setobjectxy LOCALID_LITTLEROOT_MOM, 11, 9
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
