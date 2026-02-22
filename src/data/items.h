@@ -2336,7 +2336,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A can of repellent\n"
             "that will never run\n"
-            "out. Mango-scented."),
+            "out. Lemon-scented."),
         .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
