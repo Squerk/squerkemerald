@@ -4577,9 +4577,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Thief"),
         .description = COMPOUND_STRING(
-            "While attacking, it may\n"
+            "While attacking, it DOESN'T\n"
             "steal the foe's held item."),
-        .effect = EFFECT_STEAL_ITEM,
+        .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 40,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -9161,9 +9161,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Covet"),
         .description = COMPOUND_STRING(
-            "Cutely begs to obtain an\n"
-            "item held by the foe."),
-        .effect = EFFECT_STEAL_ITEM,
+            "Cutely begs to NOT obtain\n"
+            "an item held by the foe."),
+        .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 60 : 40,
         .type = TYPE_FAIRY,
         .accuracy = 100,
