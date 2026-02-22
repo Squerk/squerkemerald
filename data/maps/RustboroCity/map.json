@@ -58,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 25,
-      "y": 37,
+      "x": 34,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -84,8 +84,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 12,
-      "y": 45,
+      "x": 15,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 26,
-      "y": 23,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -111,8 +111,8 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_BOY",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 24,
-      "y": 51,
+      "x": 7,
+      "y": 49,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -125,8 +125,8 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 25,
-      "y": 51,
+      "x": 8,
+      "y": 49,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -233,7 +233,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 31,
+      "x": 32,
       "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",

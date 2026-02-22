@@ -41,7 +41,7 @@ HeartScaleTutor_EventScript_MoveTutor::
 HeartScaleTutor_EventScript_MaxIV::
     msgbox HeartScaleTutor_Text_MaxIV, MSGBOX_DEFAULT
     checkitem ITEM_HEART_SCALE
-    goto_if_eq VAR_RESULT, FALSE, HeartScaleTutor_EventScript_NoThreeHeartScale
+    goto_if_eq VAR_RESULT, FALSE, HeartScaleTutor_EventScript_NoHeartScale
 
     special DoHyperTraining
     waitstate

@@ -388,6 +388,7 @@ const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_event
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
+const u16 gObjectEventPal_Bel[] = INCBIN_U16("graphics/object_events/palettes/bel.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");
