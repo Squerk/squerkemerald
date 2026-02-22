@@ -482,11 +482,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_COVE",
-      "name": "PETALBURG COVE",
-      "x": 0,
-      "y": 8,
-      "width": 1,
-      "height": 1
+      "name": "PETALBURG COVE"
     },
     {
       "id": "MAPSEC_RUSTURF_TUNNEL",
