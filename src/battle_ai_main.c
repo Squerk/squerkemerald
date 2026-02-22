@@ -6646,6 +6646,7 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
                                         || gBattleMons[battlerAtk].volatiles.infatuation
                                         || gBattleMons[battlerAtk].volatiles.perishSong
                                         || gBattleMons[battlerAtk].volatiles.leechSeed
+                                        || gBattleMons[battlerAtk].volatiles.wrapped
                                         || gBattleMons[battlerAtk].volatiles.yawn;
             bool32 defHasNegativeCondition = (defStatus & STATUS1_POISON)
                                         || (defStatus & STATUS1_BURN)
@@ -6654,6 +6655,7 @@ static s32 AI_ComplexMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 s
                                         || gBattleMons[battlerDef].volatiles.infatuation
                                         || gBattleMons[battlerDef].volatiles.perishSong
                                         || gBattleMons[battlerDef].volatiles.leechSeed
+                                        || gBattleMons[battlerDef].volatiles.wrapped
                                         || gBattleMons[battlerDef].volatiles.yawn;
 
             if (atkHasNegativeCondition)
