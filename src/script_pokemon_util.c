@@ -65,10 +65,24 @@ u8 ScriptGiveEgg(u16 species)
 {
     struct Pokemon mon;
     u8 isEgg;
+    u8 perfectIv = MAX_PER_STAT_IVS;
+    u8 statIndices[NUM_STATS] = {0, 1, 2, 3, 4, 5};
+    u32 i;
 
     CreateEgg(&mon, species, TRUE);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
+
+    // Guarantee 3 random perfect IVs
+    for (i = NUM_STATS - 1; i > 0; i--)
+    {
+        u32 j = Random() % (i + 1);
+        u8 tmp = statIndices[i];
+        statIndices[i] = statIndices[j];
+        statIndices[j] = tmp;
+    }
+    for (i = 0; i < 3; i++)
+        SetMonData(&mon, MON_DATA_HP_IV + statIndices[i], &perfectIv);
 
     return GiveMonToPlayer(&mon);
 }
@@ -391,6 +405,22 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
         // IV
         if (ivs[i] <= MAX_PER_STAT_IVS)
             SetMonData(&mon, MON_DATA_HP_IV + i, &ivs[i]);
+    }
+    // Guarantee 3 random perfect IVs
+    {
+        u8 perfectIv = MAX_PER_STAT_IVS;
+        u8 statIndices[NUM_STATS] = {0, 1, 2, 3, 4, 5};
+        // Fisher-Yates shuffle
+        for (i = NUM_STATS - 1; i > 0; i--)
+        {
+            u32 j = Random() % (i + 1);
+            u8 tmp = statIndices[i];
+            statIndices[i] = statIndices[j];
+            statIndices[j] = tmp;
+        }
+        // Set first 3 shuffled stats to perfect
+        for (i = 0; i < 3; i++)
+            SetMonData(&mon, MON_DATA_HP_IV + statIndices[i], &perfectIv);
     }
     CalculateMonStats(&mon);
 

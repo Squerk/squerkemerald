@@ -4529,6 +4529,23 @@ static void BufferInGameTradeMonName(void)
     StringCopy(gStringVar2, GetSpeciesName(inGameTrade->species));
 }
 
+static void SetThreeRandomPerfectIVs(struct Pokemon *mon)
+{
+    u8 perfectIv = MAX_PER_STAT_IVS;
+    u8 statIndices[NUM_STATS] = {0, 1, 2, 3, 4, 5};
+    u32 i;
+
+    for (i = NUM_STATS - 1; i > 0; i--)
+    {
+        u32 j = Random() % (i + 1);
+        u8 tmp = statIndices[i];
+        statIndices[i] = statIndices[j];
+        statIndices[j] = tmp;
+    }
+    for (i = 0; i < 3; i++)
+        SetMonData(mon, MON_DATA_HP_IV + statIndices[i], &perfectIv);
+}
+
 static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTrade)
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
@@ -4541,12 +4558,14 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
 
     CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
 
-    SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
-    SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
-    SetMonData(pokemon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
-    SetMonData(pokemon, MON_DATA_SPEED_IV, &inGameTrade->ivs[3]);
-    SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
-    SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
+    // Set random IVs with 3 guaranteed perfect
+    u8 randomIv;
+    for (u32 i = 0; i < NUM_STATS; i++)
+    {
+        randomIv = Random() % (MAX_PER_STAT_IVS + 1);
+        SetMonData(pokemon, MON_DATA_HP_IV + i, &randomIv);
+    }
+    SetThreeRandomPerfectIVs(pokemon);
     SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
     SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);

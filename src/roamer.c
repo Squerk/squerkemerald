@@ -97,10 +97,28 @@ void MoveAllRoamers(void)
         RoamerMove(i);
 }
 
+static void SetThreeRandomPerfectIVs(struct Pokemon *mon)
+{
+    u8 perfectIv = MAX_PER_STAT_IVS;
+    u8 statIndices[NUM_STATS] = {0, 1, 2, 3, 4, 5};
+    u32 i;
+
+    for (i = NUM_STATS - 1; i > 0; i--)
+    {
+        u32 j = Random() % (i + 1);
+        u8 tmp = statIndices[i];
+        statIndices[i] = statIndices[j];
+        statIndices[j] = tmp;
+    }
+    for (i = 0; i < 3; i++)
+        SetMonData(mon, MON_DATA_HP_IV + statIndices[i], &perfectIv);
+}
+
 static void CreateInitialRoamerMon(u8 index, u16 species, u8 level)
 {
     ClearRoamerLocationHistory(index);
     CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    SetThreeRandomPerfectIVs(&gEnemyParty[0]);  // Set 3 perfect IVs before storing
     ROAMER(index)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
     ROAMER(index)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
     ROAMER(index)->species = species;
