@@ -111,6 +111,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
+    message LittlerootTown_ProfessorBirchsLab_Text_GiveCandies
+	waitmessage
+	delay 10
+	giveitem ITEM_INFINITE_CANDY
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
@@ -540,7 +544,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	giveitem ITEM_QUICK_BALL, 15
 	giveitem ITEM_SUPER_ROD
 	giveitem ITEM_INFINITE_REPEL
-	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_PORTA_HEAL
 	setflag FLAG_RECEIVED_SUPER_ROD
 	setflag FLAG_RECEIVED_OLD_ROD
@@ -710,6 +713,10 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 	.string "Prof. Birch: While you're at it, why not\n"
 	.string "give a nickname to that {STR_VAR_1}?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_GiveCandies:
+	.string "Prof. Birch: This might be useful to you\n"
+	.string "and {STR_VAR_1} as well; they love these!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "Prof. Birch: If you work at Pokémon\n"
