@@ -3,7 +3,7 @@
   "name": "PetalburgHideaway",
   "layout": "LAYOUT_PETALBURG_HIDEAWAY",
   "music": "MUS_PETALBURG_WOODS",
-  "region_map_section": "MAPSEC_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_PETALBURG_COVE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_NONE",
