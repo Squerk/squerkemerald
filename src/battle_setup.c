@@ -875,13 +875,13 @@ void ChooseStarter(void)
 static void CB2_GiveStarter(void)
 {
     u16 starterMon;
-    struct Pokemon *mon;
+    u8 metLocation = METLOC_FATEFUL_ENCOUNTER;
 
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
-    mon = &gPlayerParty[GetMonData(&gPlayerParty[0], MON_DATA_SPECIES) ? 0 : 0];
-    SetMonData(mon, MON_DATA_ABILITY_NUM, &(u8){2});
+    SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &(u8){2});
+    SetMonData(&gPlayerParty[0], MON_DATA_MET_LOCATION, &metLocation);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
