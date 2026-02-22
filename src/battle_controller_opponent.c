@@ -528,6 +528,34 @@ static void OpponentHandleChooseItem(u32 battler)
     BtlController_Complete(battler);
 }
 
+static bool32 IsComplexValidSwitchin(u32 battler, u32 battlerDef, s32 monId, bool32 *foundFasterMon)
+{
+    struct Pokemon *party = GetBattlerParty(battler);
+    u32 monSpeed = GetMonData(&party[monId], MON_DATA_SPEED);
+    u32 defSpeed = gBattleMons[battlerDef].speed;
+    bool32 monIsFaster = *foundFasterMon || (monSpeed > defSpeed);
+    if (monSpeed > defSpeed)
+        *foundFasterMon = TRUE;
+
+    u32 bestDefDmg = 0;
+    for (u32 k = 0; k < MAX_MON_MOVES; k++)
+    {
+        u32 defMove = gBattleMons[battlerDef].moves[k];
+        if (defMove == MOVE_NONE || IsBattleMoveStatus(defMove))
+            continue;
+        u32 dmg = AI_CalcDamage(defMove, battlerDef, battler, NULL, NO_GIMMICK, NO_GIMMICK, AI_GetWeather()).median;
+        if (dmg > bestDefDmg)
+            bestDefDmg = dmg;
+    }
+
+    u32 monHp = GetMonData(&party[monId], MON_DATA_HP);
+    if (monIsFaster && bestDefDmg < monHp)
+        return TRUE;
+    if (!monIsFaster && bestDefDmg * 2 < monHp)
+        return TRUE;
+    return FALSE;
+}
+
 static void OpponentHandleChoosePokemon(u32 battler)
 {
     s32 chosenMonId;
@@ -550,6 +578,35 @@ static void OpponentHandleChoosePokemon(u32 battler)
             SetBattlerAiData(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT), gAiLogicData);
 
         chosenMonId = GetMostSuitableMonToSwitchInto(battler, switchType);
+
+        // AI_FLAG_COMPLEX: filter out mons that fail speed/survivability check
+        if ((gAiThinkingStruct->aiFlags[battler] & AI_FLAG_COMPLEX) && chosenMonId != PARTY_SIZE)
+        {
+            u32 battlerDef = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler)));
+            s32 firstId, lastId;
+            GetAIPartyIndexes(battler, &firstId, &lastId);
+            bool32 foundFasterMon = FALSE;
+
+            if (!IsComplexValidSwitchin(battler, battlerDef, chosenMonId, &foundFasterMon))
+            {
+                struct Pokemon *party = GetBattlerParty(battler);
+                chosenMonId = PARTY_SIZE;
+                foundFasterMon = FALSE;
+                for (s32 i = firstId; i < lastId; i++)
+                {
+                    if (!IsValidForBattle(&party[i]))
+                        continue;
+                    if (i == gBattlerPartyIndexes[battler])
+                        continue;
+                    if (IsComplexValidSwitchin(battler, battlerDef, i, &foundFasterMon))
+                    {
+                        chosenMonId = i;
+                        break;
+                    }
+                }
+            }
+        }
+
         if (chosenMonId == PARTY_SIZE) // Advanced logic failed so we pick the next available battler
         {
             s32 battler1, battler2, firstId, lastId;

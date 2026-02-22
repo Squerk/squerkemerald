@@ -1131,104 +1131,104 @@ bool32 ShouldSwitch(u32 battler)
     s32 i;
     s32 availableToSwitch;
 
-    if (!CanBattlerConsiderSwitch(battler))
-        return FALSE;
+    // if (!CanBattlerConsiderSwitch(battler))
+    //     return FALSE;
 
-    // Sequence Switching AI never switches mid-battle
-    if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SEQUENCE_SWITCHING)
-        return FALSE;
+    // // Sequence Switching AI never switches mid-battle
+    // if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SEQUENCE_SWITCHING)
+    //     return FALSE;
 
-    availableToSwitch = 0;
+    // availableToSwitch = 0;
 
-    if (IsDoubleBattle())
-    {
-        u32 partner = BATTLE_PARTNER(battler);
-        battlerIn1 = battler;
-        if (gAbsentBattlerFlags & (1u << partner))
-            battlerIn2 = battler;
-        else
-            battlerIn2 = partner;
-    }
-    else
-    {
-        battlerIn1 = battler;
-        battlerIn2 = battler;
-    }
+    // if (IsDoubleBattle())
+    // {
+    //     u32 partner = BATTLE_PARTNER(battler);
+    //     battlerIn1 = battler;
+    //     if (gAbsentBattlerFlags & (1u << partner))
+    //         battlerIn2 = battler;
+    //     else
+    //         battlerIn2 = partner;
+    // }
+    // else
+    // {
+    //     battlerIn1 = battler;
+    //     battlerIn2 = battler;
+    // }
 
-    GetAIPartyIndexes(battler, &firstId, &lastId);
-    party = GetBattlerParty(battler);
+    // GetAIPartyIndexes(battler, &firstId, &lastId);
+    // party = GetBattlerParty(battler);
 
-    for (i = firstId; i < lastId; i++)
-    {
-        if (!IsValidForBattle(&party[i]))
-            continue;
-        if (i == gBattlerPartyIndexes[battlerIn1])
-            continue;
-        if (i == gBattlerPartyIndexes[battlerIn2])
-            continue;
-        if (i == gBattleStruct->monToSwitchIntoId[battlerIn1])
-            continue;
-        if (i == gBattleStruct->monToSwitchIntoId[battlerIn2])
-            continue;
-        if (IsAceMon(battler, i))
-            continue;
+    // for (i = firstId; i < lastId; i++)
+    // {
+    //     if (!IsValidForBattle(&party[i]))
+    //         continue;
+    //     if (i == gBattlerPartyIndexes[battlerIn1])
+    //         continue;
+    //     if (i == gBattlerPartyIndexes[battlerIn2])
+    //         continue;
+    //     if (i == gBattleStruct->monToSwitchIntoId[battlerIn1])
+    //         continue;
+    //     if (i == gBattleStruct->monToSwitchIntoId[battlerIn2])
+    //         continue;
+    //     if (IsAceMon(battler, i))
+    //         continue;
 
-        availableToSwitch++;
-    }
+    //     availableToSwitch++;
+    // }
 
-    if (availableToSwitch == 0)
-            return FALSE;
+    // if (availableToSwitch == 0)
+    //         return FALSE;
 
-    // NOTE: The sequence of the below functions matter! Do not change unless you have carefully considered the outcome.
-    // Since the order is sequential, and some of these functions prompt switch to specific party members.
+    // // NOTE: The sequence of the below functions matter! Do not change unless you have carefully considered the outcome.
+    // // Since the order is sequential, and some of these functions prompt switch to specific party members.
 
-    // FindMon functions can prompt a switch to specific party members that override GetMostSuitableMonToSwitchInto
-    // The rest can prompt a switch to party member returned by GetMostSuitableMonToSwitchInto
+    // // FindMon functions can prompt a switch to specific party members that override GetMostSuitableMonToSwitchInto
+    // // The rest can prompt a switch to party member returned by GetMostSuitableMonToSwitchInto
 
-    if (ShouldSwitchIfWonderGuard(battler))
-        return TRUE;
-    if ((gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING) && (CanMonSurviveHazardSwitchin(battler) == FALSE))
-        return FALSE;
-    if (ShouldSwitchIfTrapperInParty(battler))
-        return TRUE;
-    if (FindMonThatAbsorbsOpponentsMove(battler))
-        return TRUE;
-    if (ShouldSwitchIfOpponentChargingOrInvulnerable(battler))
-        return TRUE;
-    if (ShouldSwitchIfTruant(battler))
-        return TRUE;
-    if (ShouldSwitchIfComplexAI(battler))
-        return TRUE;
-    if (ShouldSwitchIfAllMovesBad(battler))
-        return TRUE;
-    if (ShouldSwitchIfBadlyStatused(battler))
-        return TRUE;
-    if (ShouldSwitchIfAbilityBenefit(battler))
-        return TRUE;
-    if (ShouldSwitchIfHasBadOdds(battler))
-        return TRUE;
-    if (ShouldSwitchIfEncored(battler))
-        return TRUE;
-    if (ShouldSwitchIfBadChoiceLock(battler))
-        return TRUE;
-    if (ShouldSwitchIfAttackingStatsLowered(battler))
-        return TRUE;
+    // if (ShouldSwitchIfWonderGuard(battler))
+    //     return TRUE;
+    // if ((gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING) && (CanMonSurviveHazardSwitchin(battler) == FALSE))
+    //     return FALSE;
+    // if (ShouldSwitchIfTrapperInParty(battler))
+    //     return TRUE;
+    // if (FindMonThatAbsorbsOpponentsMove(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfOpponentChargingOrInvulnerable(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfTruant(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfComplexAI(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfAllMovesBad(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfBadlyStatused(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfAbilityBenefit(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfHasBadOdds(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfEncored(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfBadChoiceLock(battler))
+    //     return TRUE;
+    // if (ShouldSwitchIfAttackingStatsLowered(battler))
+    //     return TRUE;
 
-    // Removing switch capabilites under specific conditions
-    // These Functions prevent the "FindMonWithFlagsAndSuperEffective" from getting out of hand.
-    // We don't use FindMonWithFlagsAndSuperEffective with AI_FLAG_SMART_SWITCHING, so we can bail early.
-    if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
-        return FALSE;
-    if (CanUseSuperEffectiveMoveAgainstOpponents(battler))
-        return FALSE;
-    if (AreStatsRaised(battler))
-        return FALSE;
+    // // Removing switch capabilites under specific conditions
+    // // These Functions prevent the "FindMonWithFlagsAndSuperEffective" from getting out of hand.
+    // // We don't use FindMonWithFlagsAndSuperEffective with AI_FLAG_SMART_SWITCHING, so we can bail early.
+    // if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
+    //     return FALSE;
+    // if (CanUseSuperEffectiveMoveAgainstOpponents(battler))
+    //     return FALSE;
+    // if (AreStatsRaised(battler))
+    //     return FALSE;
 
-    // Default Function
-    // Can prompt switch if AI has a pokemon in party that resists current opponent & has super effective move
-    if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 50)
-        || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 33))
-        return TRUE;
+    // // Default Function
+    // // Can prompt switch if AI has a pokemon in party that resists current opponent & has super effective move
+    // if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 50)
+    //     || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 33))
+    //     return TRUE;
 
     return FALSE;
 }
