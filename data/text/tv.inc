@@ -2005,7 +2005,7 @@ gTVPokemonNewsBattleFrontierText18::
 	.string "That's the news on POKéMON NEWS!$"
 
 gTVWhatsNo1InHoennTodayText00::
-	.string "WHAT'S NO. 1 IN HOENN TODAY?\n"
+	.string "WHAT'S NO. 1 IN Hoenn TODAY?\n"
 	.string "Yes, it's that time again!\p"
 	.string "Hello, viewers! Are you giving your\n"
 	.string "best at whatever you do?\p"

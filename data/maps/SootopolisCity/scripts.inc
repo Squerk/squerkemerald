@@ -1607,7 +1607,7 @@ SootopolisCity_Text_KyogreCalmDown:
 SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "ARCHIE: KYOGRE and GROUDON both\n"
 	.string "flew off to who knows where.\p"
-	.string "The weather in HOENN has returned\n"
+	.string "The weather in Hoenn has returned\n"
 	.string "to its normal state…\p"
 	.string "Haha…\n"
 	.string "Hahaha…\p"
@@ -1685,7 +1685,7 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 	.string "WALLACE: {PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
 	.string "Thanks to your help, SOOTOPOLIS…\n"
-	.string "No, all of HOENN was saved.\p"
+	.string "No, all of Hoenn was saved.\p"
 	.string "On behalf of the people, I thank you.\p"
 	.string "This is a gift from me.\n"
 	.string "Please accept it.$"

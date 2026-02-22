@@ -1220,7 +1220,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "the Gym Leader, Roxanne.\p"
 	.string "After her, go on to other Pokémon\n"
 	.string "Gyms and defeat their Leaders.\p"
-	.string "Collect BadgeS from them,\n"
+	.string "Collect Badges from them,\n"
 	.string "understood?\p"
 	.string "Of course, I'm a Gym Leader, too.\n"
 	.string "We'll battle one day, {PLAYER}.\p"
@@ -1235,7 +1235,7 @@ PetalburgCity_Gym_Text_NormanGoToRustboro:
 	.string "{PLAYER}, I want you to challenge me\n"
 	.string "when you become a lot stronger.\p"
 	.string "I'll battle you, {PLAYER}, when you\n"
-	.string "can show me four Gym BadgeS, okay?$"
+	.string "can show me four Gym Badges, okay?$"
 
 PetalburgCity_Gym_Text_NormanGoToDewford:
 	.string "DAD: I see… So, you've beaten\n"
@@ -1249,12 +1249,12 @@ PetalburgCity_Gym_Text_NormanGoToDewford:
 PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "DAD: Hm… {PLAYER}, you have gotten\n"
 	.string "stronger.\p"
-	.string "I can tell by the number of BadgeS\n"
+	.string "I can tell by the number of Badges\n"
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanIntro:
 	.string "DAD: Hm…\n"
-	.string "So, you did get four Gym BadgeS.\p"
+	.string "So, you did get four Gym Badges.\p"
 	.string "Fine, as I promised, we will have\n"
 	.string "a Pokémon battle.\p"
 	.string "{PLAYER}…\p"

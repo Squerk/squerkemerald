@@ -112,7 +112,7 @@ RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "That's settled, then! We'll aim for the\n"
 	.string "Pokémon CHAMPIONSHIP together!\p"
 	.string "It's your job as a TRAINER to collect\n"
-	.string "Gym BadgeS, am I right?\p"
+	.string "Gym Badges, am I right?\p"
 	.string "But Gym Leaders aren't pushovers!\p"
 	.string "And that's where I come in!\n"
 	.string "I'm here to provide expert advice!\p"

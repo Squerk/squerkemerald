@@ -191,7 +191,7 @@ SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
 	.string "Yow! You've beaten even JUAN, who\n"
 	.string "was supposedly the best in all HOENN!\p"
 	.string "Okay! Check out your TRAINER CARD.\p"
-	.string "If you've gotten all the BadgeS, you're\n"
+	.string "If you've gotten all the Badges, you're\n"
 	.string "set for the Pokémon LEAGUE challenge!$"
 
 SootopolisCity_Gym_1F_Text_JuanIntro:
@@ -259,7 +259,7 @@ SootopolisCity_Gym_1F_Text_RegisteredJuan:
 
 SootopolisCity_Gym_1F_Text_JuanPostBattle:
 	.string "The TRAINERS who have gathered all\n"
-	.string "the Gym BadgeS of HOENN should make\l"
+	.string "the Gym Badges of Hoenn should make\l"
 	.string "way to the ultimate destination.\p"
 	.string "The Pokémon LEAGUE.\p"
 	.string "Travel to the easternmost reaches\n"
@@ -269,7 +269,7 @@ SootopolisCity_Gym_1F_Text_JuanPostBattle:
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
 	.string "There remains but one Badge to\n"
-	.string "obtain in HOENN.\p"
+	.string "obtain in Hoenn.\p"
 	.string "If you wish to challenge the Pokémon\n"
 	.string "LEAGUE, you must obtain the last\l"
 	.string "Badge from the Gym in FORTREE.$"

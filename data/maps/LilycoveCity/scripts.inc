@@ -452,9 +452,9 @@ LilycoveCity_Text_MayGoingBackToLittleroot:
 
 LilycoveCity_Text_MayYouGoingToCollectBadges:
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Collect all the Gym BadgeS and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon LEAGUE challenge?\p"
-	.string "Well, while you're collecting BadgeS,\n"
+	.string "Well, while you're collecting Badges,\n"
 	.string "{PLAYER}{KUN}, I'm going to work on my\l"
 	.string "POKéDEX. I'll complete it before you!\p"
 	.string "See you!$"
@@ -514,7 +514,7 @@ LilycoveCity_Text_BrendanGoingBackToLittleroot:
 
 LilycoveCity_Text_BrendanYouGoingToCollectBadges:
 	.string "{PLAYER}, what are you going to do?\p"
-	.string "Collect all the Gym BadgeS and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon LEAGUE challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"
@@ -596,7 +596,7 @@ LilycoveCity_Text_GoingToMoveDeleterForHMs:
 
 LilycoveCity_Text_ImFromKanto:
 	.string "I came from KANTO.\p"
-	.string "The HOENN region is beautiful with\n"
+	.string "The Hoenn region is beautiful with\n"
 	.string "all its water and verdant nature.\p"
 	.string "Hunh? Wait a second…\p"
 	.string "Could there be rare Pokémon that live\n"
@@ -747,7 +747,7 @@ LilycoveCity_Text_JustArrivedAndSawRarePokemon:
 	.string "We happened to see a DRAGON-type\n"
 	.string "Pokémon flying way up in the sky.\p"
 	.string "Do cool Pokémon like that live in\n"
-	.string "the HOENN region?$"
+	.string "the Hoenn region?$"
 
 LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "On our honeymoon, we vowed to see as\n"
