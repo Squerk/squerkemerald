@@ -148,8 +148,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 42,
-      "y": 5,
+      "x": 40,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -323,14 +323,14 @@
     },
     {
       "x": 42,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_HIDEAWAY",
       "dest_warp_id": "0"
     },
     {
       "x": 43,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_HIDEAWAY",
       "dest_warp_id": "1"
