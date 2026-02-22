@@ -246,6 +246,9 @@ const u16 gItemIconPalette_YellowMint[] = INCBIN_U16("graphics/items/icon_palett
 const u32 gItemIcon_RareCandy[] = INCBIN_U32("graphics/items/icons/rare_candy.4bpp.smol");
 const u16 gItemIconPalette_RareCandy[] = INCBIN_U16("graphics/items/icon_palettes/rare_candy.gbapal");
 
+const u32 gItemIcon_CandyJar[] = INCBIN_U32("graphics/items/icons/candy_jar.4bpp.smol");
+const u16 gItemIconPalette_CandyJar[] = INCBIN_U16("graphics/items/icon_palettes/candy_jar.gbapal");
+
 const u32 gItemIcon_ExpCandyXS[] = INCBIN_U32("graphics/items/icons/exp_candy_xs.4bpp.smol");
 const u32 gItemIcon_ExpCandyS[] = INCBIN_U32("graphics/items/icons/exp_candy_s.4bpp.smol");
 const u32 gItemIcon_ExpCandyM[] = INCBIN_U32("graphics/items/icons/exp_candy_m.4bpp.smol");

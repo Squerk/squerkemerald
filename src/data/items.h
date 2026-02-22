@@ -2039,19 +2039,19 @@ const struct Item gItemsInfo[] =
 
     [ITEM_INFINITE_CANDY] =
     {
-        .name = ITEM_NAME("Infinite Candy"),
+        .name = ITEM_NAME("Candy Jar"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Infinitely raises\n"
-            "the level of a\n"
-            "Pokémon until cap."),
+            "A jar of rare\n"
+            "candies that will\n"
+            "never run out."),
         .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
         .effect = gItemEffect_RareCandy,
-        .iconPic = gItemIcon_RareCandy,
-        .iconPalette = gItemIconPalette_RareCandy,
+        .iconPic = gItemIcon_CandyJar,
+        .iconPalette = gItemIconPalette_CandyJar,
     },
 
     [ITEM_EXP_CANDY_XS] =
@@ -2331,12 +2331,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_INFINITE_REPEL] =
     {
-        .name = ITEM_NAME("Infinite Repel"),
+        .name = ITEM_NAME("Bottomless Repel"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Toggles wild\n"
-            "encounters on\n"
-            "and off."),
+            "A can of repellent\n"
+            "that will never run\n"
+            "out. Mango-scented."),
         .pocket = POCKET_KEY_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
@@ -13596,7 +13596,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SUPER_ROD] =
     {
-        .name = ITEM_NAME("Super Rod"),
+        .name = ITEM_NAME("Fishing Rod"),
         .price = 0,
         .description = COMPOUND_STRING(
             "The best fishing\n"
