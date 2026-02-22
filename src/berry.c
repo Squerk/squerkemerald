@@ -2099,7 +2099,7 @@ static u8 CalcBerryYield(struct BerryTree *tree)
     else
         result = CalcBerryYieldInternal(max, min, BerryTreeGetNumStagesWatered(tree));
 
-    return result;
+    return result * 30;
 }
 
 static u32 GetBerryTreeAge(u8 id, u8 stage)
@@ -2246,7 +2246,6 @@ void ObjectEventInteractionPickBerryTree(void)
     if (gSpecialVar_0x8004 == 3)
     {
         AddBagItem(BerryTypeToItemId(berry), GetBerryCountByBerryTreeId(id));
-        AddBagItem(BerryTypeToItemId(mutation), 1);
     }
 }
 

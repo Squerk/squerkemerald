@@ -15645,6 +15645,7 @@ static const struct LevelUpMove sMalamarLevelUpLearnset[] = {
 #endif //P_FAMILY_INKAY
 
 #if P_FAMILY_BINACLE
+static const struct LevelUpMove sBinacleLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 3, MOVE_WATER_GUN),
