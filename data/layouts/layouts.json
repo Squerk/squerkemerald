@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_PETALBURG_HIDEAWAY",
       "name": "PetalburgHideaway_Layout",
       "width": 20,
-      "height": 20,
+      "height": 17,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/PetalburgHideaway/border.bin",
