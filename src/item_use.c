@@ -36,6 +36,7 @@
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "strings.h"
 #include "string_util.h"
@@ -1032,6 +1033,13 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
             DisplayItemMessage(taskId, 1, gText_InfiniteRepelActivated, CloseItemMessage);
         }
     }
+}
+
+void ItemUseOutOfBattle_PortaHeal(u8 taskId)
+{
+    HealPlayerParty();
+    PlayFanfare(MUS_HEAL);
+    DisplayItemMessage(taskId, 1, gText_PortaHealUsed, CloseItemMessage);
 }
 
 void HandleUseExpiredRepel(struct ScriptContext *ctx)

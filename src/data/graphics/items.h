@@ -248,6 +248,8 @@ const u16 gItemIconPalette_RareCandy[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_CandyJar[] = INCBIN_U32("graphics/items/icons/candy_jar.4bpp.smol");
 const u16 gItemIconPalette_CandyJar[] = INCBIN_U16("graphics/items/icon_palettes/candy_jar.gbapal");
+const u32 gItemIcon_MedicineBox[] = INCBIN_U32("graphics/items/icons/unagi_lunch.4bpp.smol");
+const u16 gItemIconPalette_MedicineBox[] = INCBIN_U16("graphics/items/icon_palettes/unagi_lunch.gbapal");
 
 const u32 gItemIcon_ExpCandyXS[] = INCBIN_U32("graphics/items/icons/exp_candy_xs.4bpp.smol");
 const u32 gItemIcon_ExpCandyS[] = INCBIN_U32("graphics/items/icons/exp_candy_s.4bpp.smol");

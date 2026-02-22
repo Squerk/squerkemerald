@@ -217,6 +217,7 @@ void NewGameInitData(void)
     ClearFollowerNPCData();
     AddBagItem(ITEM_INFINITE_REPEL, 1);
     AddBagItem(ITEM_INFINITE_CANDY, 1);
+    AddBagItem(ITEM_PORTA_HEAL, 1);
 }
 
 static void ResetMiniGamesRecords(void)
