@@ -545,6 +545,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	giveitem ITEM_SUPER_ROD
 	giveitem ITEM_INFINITE_REPEL
 	giveitem ITEM_PORTA_HEAL
+	giveitem ITEM_ESCAPE_ROPE
 	setflag FLAG_RECEIVED_SUPER_ROD
 	setflag FLAG_RECEIVED_OLD_ROD
 	setflag FLAG_RECEIVED_GOOD_ROD
