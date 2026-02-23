@@ -211,3 +211,37 @@ AI_SINGLE_BATTLE_TEST("AI_Complex: Protect scores higher when player has a negat
             TURN { MOVE(player, MOVE_SPLASH); SCORE_EQ_VAL(opponent, MOVE_PROTECT, 107); SCORE_LT(opponent, MOVE_INFESTATION, MOVE_PROTECT);}
     }
 }
+
+AI_DOUBLE_BATTLE_TEST("AI_Complex: Fake Out targets partner with Steadfast for speed boost")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_TINKATON) { Ability(ABILITY_OWN_TEMPO); Moves(MOVE_FAKE_OUT, MOVE_TACKLE); }
+        OPPONENT(SPECIES_RIOLU) { Ability(ABILITY_STEADFAST); Moves(MOVE_SPLASH); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_SPLASH);
+            MOVE(playerRight, MOVE_SPLASH);
+            EXPECT_MOVE(opponentLeft, MOVE_FAKE_OUT, target: opponentRight);
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI_Complex: Fake Out does not target partner without Steadfast")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_COMPLEX);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        OPPONENT(SPECIES_TINKATON) { Moves(MOVE_FAKE_OUT, MOVE_TACKLE); }
+        OPPONENT(SPECIES_RIOLU) { Ability(ABILITY_INNER_FOCUS); Moves(MOVE_SPLASH); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_SPLASH);
+            MOVE(playerRight, MOVE_SPLASH);
+            EXPECT_MOVE(opponentLeft, MOVE_FAKE_OUT, target: playerRight);
+        }
+    }
+}

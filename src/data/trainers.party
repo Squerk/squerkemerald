@@ -9107,12 +9107,12 @@ Pic: Twins
 Gender: Male
 Music: Twins
 Double Battle: Yes
-AI: Omniscient / Check Bad Move / Complex
+AI: Omniscient / Complex / Check Bad Move
 
 Tinkatuff @ Occa Berry
 Level: 15
 Careful Nature
-Ability: Mold Breaker
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
 - Covet

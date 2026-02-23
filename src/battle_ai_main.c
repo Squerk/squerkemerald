@@ -3259,6 +3259,17 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_EARTH_EATER:
+            case ABILITY_STEADFAST:
+                if (move == MOVE_FAKE_OUT) {
+                    if (!gDisableStructs[battlerAtk].isFirstTurn)
+                    {
+                        ADJUST_SCORE(-20);
+                        break;
+                    }
+                    if (!wouldPartnerFaint)
+                        ADJUST_SCORE(16);
+                    break;
+                }
             case ABILITY_LEVITATE:
                 if (moveType == TYPE_GROUND)
                 {
@@ -3599,6 +3610,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             } // attacker move effects
         } // check partner protecting
 
+        
         if ((isMoveAffectedByPartnerAbility && (score <= AI_SCORE_DEFAULT)) || !isMoveAffectedByPartnerAbility)
         {
             RETURN_SCORE_MINUS(10);
@@ -7211,27 +7223,14 @@ static s32 AI_ComplexSpecificMoves(u32 battlerAtk, u32 battlerDef, u32 move, s32
     }
     break;
 
-
-
     case MOVE_FAKE_OUT:
-        if (gBattleResults.battleTurnCounter == 0 && aiData->abilities[battlerDef] != ABILITY_SHIELD_DUST && aiData->abilities[battlerDef] != ABILITY_INNER_FOCUS)
-            ADJUST_SCORE(9);
         if (gDisableStructs[battlerAtk].isFirstTurn
             && aiData->abilities[battlerDef] != ABILITY_SHIELD_DUST
             && aiData->abilities[battlerDef] != ABILITY_INNER_FOCUS)
-        {
-            // Doubles bonus: partner has Steadfast
-            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
-                && aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_STEADFAST)
-                ADJUST_SCORE(12);
-            else
-                ADJUST_SCORE(9);
-        }
+            ADJUST_SCORE(9);
         else
-        {
             ADJUST_SCORE(-20);
-        }
-    break;
+        break;
 
     case MOVE_ROLE_PLAY:
     {
