@@ -430,7 +430,9 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "PetalburgHideaway"
+    "PetalburgHideaway",
+    "ShoalIsland_Inner",
+    "ShoalIsland_HotSpring"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

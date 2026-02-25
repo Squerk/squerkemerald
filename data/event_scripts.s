@@ -1167,3 +1167,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/apricorn_tree.inc"
 
 	.include "data/maps/PetalburgHideaway/scripts.inc"
+
+	.include "data/maps/ShoalIsland_Inner/scripts.inc"
+
+	.include "data/maps/ShoalIsland_HotSpring/scripts.inc"

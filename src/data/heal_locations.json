@@ -72,7 +72,7 @@
       "id": "HEAL_LOCATION_MOSSDEEP_CITY",
       "map": "MAP_MOSSDEEP_CITY",
       "x": 28,
-      "y": 17,
+      "y": 22,
       "respawn_map": "MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_MOSSDEEP_NURSE"
     },

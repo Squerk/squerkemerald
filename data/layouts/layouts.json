@@ -65,7 +65,7 @@
       "id": "LAYOUT_MOSSDEEP_CITY",
       "name": "MossdeepCity_Layout",
       "width": 80,
-      "height": 40,
+      "height": 45,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/MossdeepCity/border.bin",
@@ -405,7 +405,7 @@
       "id": "LAYOUT_ROUTE125",
       "name": "Route125_Layout",
       "width": 80,
-      "height": 40,
+      "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route125/border.bin",
@@ -4460,6 +4460,26 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/PetalburgHideaway/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgHideaway/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHOAL_ISLAND_INNER",
+      "name": "ShoalIsland_Inner_Layout",
+      "width": 37,
+      "height": 34,
+      "primary_tileset": "gTileset_General_Snow",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/ShoalIsland_Inner/border.bin",
+      "blockdata_filepath": "data/layouts/ShoalIsland_Inner/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHOAL_ISLAND_HOT_SPRING",
+      "name": "ShoalIsland_HotSpring_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/ShoalIsland_HotSpring/border.bin",
+      "blockdata_filepath": "data/layouts/ShoalIsland_HotSpring/map.bin"
     }
   ]
 }
