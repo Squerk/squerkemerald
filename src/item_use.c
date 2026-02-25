@@ -1039,7 +1039,12 @@ void ItemUseOutOfBattle_PortaHeal(u8 taskId)
 {
     HealPlayerParty();
     PlayFanfare(MUS_HEAL);
-    DisplayItemMessage(taskId, 1, gText_PortaHealUsed, CloseItemMessage);
+    if (gTasks[taskId].tUsingRegisteredKeyItem) {
+        DisplayItemMessageOnField(taskId, gText_PortaHealUsed, Task_CloseCantUseKeyItemMessage);
+    }
+    else {
+        DisplayItemMessage(taskId, 1, gText_PortaHealUsed, CloseItemMessage);
+    }
 }
 
 void HandleUseExpiredRepel(struct ScriptContext *ctx)

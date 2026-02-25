@@ -472,8 +472,7 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"
-	.string "That's the Badge from Rustboro Gym!\p"
-	.string "You must be a TRAINER.\n"
+	.string "You must be a TRAINER.\p"
 	.string "You should try using this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation:
